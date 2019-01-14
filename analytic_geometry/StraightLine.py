@@ -14,6 +14,7 @@ class StraightLine:
         self.fx = point1.line_function(point2)
         self.equ = point1.line_equation(point2)
 
+
 def main():
     """
     Add Documentation here

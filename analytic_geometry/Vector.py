@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from Point import Point
+import Point
+
 
 class Vector:
     def __init__(self, point, length, angle):
@@ -15,6 +16,9 @@ class Vector:
 
     def change_angle(self, angle):
         self.angle = angle
+
+    def change_pos(self, point):
+        self.poinbt = Point
 
 def main():
     """
