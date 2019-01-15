@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-import analytic_geometry as ag
+import analytic_geometry
+
 class Wall:
     def __init__(self, vector, width):
         self.vector = vector
@@ -11,9 +12,11 @@ class Wall:
     def change_rotation(self,angle):
         self.vector.change_angle(angle)
 
+    def change_size(self, hight, width):
+        self.vector.changle_length(hight)
+        self.width = width
 
-    #def change_size(self, hight, width):
-
+    def is_in(self, obj):
 def main():
     """
     Add Documentation here

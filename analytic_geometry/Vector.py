@@ -18,7 +18,7 @@ class Vector:
         self.angle = angle
 
     def change_pos(self, point):
-        self.poinbt = Point
+        self.poinbt = point
 
 def main():
     """
