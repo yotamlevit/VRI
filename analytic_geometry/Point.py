@@ -97,7 +97,10 @@ def main():
     """
     print quadratic_equation(1,-4,4)
     p = Point(100, 100)
+    p2 = Point(300,200)
     print p.__str__()
+    a = p.line_function(p2)
+    print a(300)
 
 if __name__ == '__main__':
     main()

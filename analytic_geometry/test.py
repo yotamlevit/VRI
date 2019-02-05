@@ -5,7 +5,7 @@ def main():
     """
     Add Documentation here
     """
-    print math.tan(30*math.pi/180)
+    print math.cos(30*math.pi/180)
 
 
 if __name__ == '__main__':
