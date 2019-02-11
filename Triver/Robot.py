@@ -3,11 +3,10 @@
 
 class Robot:
 
-    def __init__(self, name='Bob', motor_a=, motor_b):
+    def __init__(self, name='Bob', faction_movment, factions):
         self.name = name
-        self.motor_a = motor_a
-        self.motor_b = motor_b
-def main():
+        self.movment = faction_movment
+        self.faction = factions
     """
     Add Documentation here
     """

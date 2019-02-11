@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 
+class Axis:
+    def __init__(self, axis):
+        if axis == "liniar"
 
-class Motor:
-    def __init__(self, force, weight, function):
-        self.weight = weight
-        self.force = force
-        self.function = function
+
 def main():
     """
     Add Documentation here
