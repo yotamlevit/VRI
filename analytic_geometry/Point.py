@@ -2,7 +2,7 @@
 import math
 
 def slope(dx, dy):
-    return (dy / dx) if dx else None
+    return (float(dy) / float(dx)) if dx else None
 
 def quadratic_equation(a, b, c):
     d = (b**2) - (4*a*c)

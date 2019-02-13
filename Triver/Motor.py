@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
+from Linear import *
 
-
-class Motor:
-    def __init__(self, force, weight, function):
+class Motor(Linear):
+    def __init__(self, name, toque, weight, power, shaft_diameter):
+        self.name = name
         self.weight = weight
-        self.force = force
-        self.function = function
+        super(Motor, self).__init__(toque, power, shaft_diameter)
+
+
 def main():
     """
     Add Documentation here

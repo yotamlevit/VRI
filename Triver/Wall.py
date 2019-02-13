@@ -4,20 +4,41 @@ import math
 
 class Wall:
     def __init__(self, vector, width):
+        """
+        init for thje wall class
+        """
         self.vector = vector
         self.width = width
 
+    def __str__(self):
+        return 'Vector: {}, width: {})'.format(self.vector, self.width)
+
+    def __repr__(self):
+        return 'Vector: {}, width: {})'.format(self.vector, self.width)
+
     def change_pos(self, point):
+        """
+        change the wall position
+        """
         self.vector.change_pos(point)
 
     def change_rotation(self,angle):
+        """
+        change the wall angle
+        """
         self.vector.change_angle(angle)
 
     def change_size(self, hight, width):
+        """
+        change the wall size
+        """
         self.vector.changle_length(hight)
         self.width = width
 
     def get_points(self):
+        """
+        return the wall vertex positions
+        """
         angle = self.vector.angle
         length = self.vector.length
         points = []
@@ -45,6 +66,9 @@ class Wall:
         return points
 
     def get_function(self):
+        """
+        return the sides functions
+        """
         points = self.get_points()
         func = []
         func.append(ag.StraightLine(points[0], points[1]))
@@ -54,6 +78,9 @@ class Wall:
         return func
 
     def is_in(self, targets):
+        """
+        return true if the robot got in the
+        """
         funcs = self.get_function()
         for func in funcs:
             for target in targets:
@@ -68,7 +95,8 @@ def main():
     v = ag.Vector(p, 4, 315)
     w = Wall(v, 4)
     w.get_points()
-    p2 = ag.Point(1)
+    #p2 = ag.Point(1)
+    print w.__str__()
 
 if __name__ == '__main__':
     main()

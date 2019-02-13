@@ -9,7 +9,7 @@ class Vector:
         self.point = point
 
     def __str__(self):
-        return 'length: {} , angle: {} , '.format(self.length, self.angle) + self.point.__repr__()
+        return 'length: {} , angle: {} , '.format(self.length, self.angle) + 'Start ' + self.point.__repr__()
 
     def change_length(self, length):
         self.length = length
