@@ -1,17 +1,20 @@
 # -*- coding: utf-8 -*-
 from Motor import *
+import analytic_geometry as ag
 
 FRAME_WEIGHT = 1000
 class Robot:
 
-    def __init__(self, name='Bob', wheel=2, motors=[Motor('motor_1', 48, 210, 'no_function', 'linear'), Motor('motor_2', 48, 210, 'no_function', 'linear')]):
+    def __init__(self, name='Bob', wheel=2, motor1=Motor('motor_1', 48, 210, 5, 6), motor2=Motor('motor_2', 48, 210, 5, 6)):
         self.name = name
         self.wheel = wheel
-        self.motors = motors
-        self.robot_weight = FRAME_WEIGHT
-        for motor in motors:
-            self.robot_weight += motor.weight
-        self.fre
+        self.motor1 = motor1
+        self.motor2 = motor2
+        self.robot_weight = FRAME_WEIGHT + self.motor1.weight + self.motor2.weight
+
+    def __str__(self):
+        return 'Robot --- : Name: {}, wheel radius: {},\n' \
+               '            Motor1: {}, Motor2: {}'.format(self.name, self.wheel, self.motor1, self.motor2)
 
 
 

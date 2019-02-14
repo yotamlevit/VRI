@@ -3,8 +3,11 @@ from Wall import Wall
 import analytic_geometry as ag
 class Environment:
 
-    def __init__(self):
+    def __init__(self, robot, height, width):
         self.objects = {}
+        self.robot = robot
+        self.height = height
+        self.width = width
 
     def add_obj(self, obj):
         self.objects[str(id(obj))] = obj
@@ -29,7 +32,8 @@ class Environment:
         self.objects.clear()
 
     def __str__(self):
-        return "Objects are: {}".format(self.objects)
+        return "Robot is: {}\n" \
+               "Objects are: {}".format(self.robot, self.objects)
 
 def main():
     """
