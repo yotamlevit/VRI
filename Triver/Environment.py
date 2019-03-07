@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 from Wall import Wall
 import analytic_geometry as ag
+from Point import Point
+from StraightLine import StraightLine
+from Vector import Vector
 class Environment:
 
     def __init__(self, robot, height, width):
@@ -39,7 +42,7 @@ def main():
     """
     Add Documentation here
     """
-    v = ag.Vector(ag.Point(100,100), 100, 20)
+    v = Vector(Point(100,100), 100, 20)
     w = Wall(v, 10)
     e = Environment()
     e.add_obj(w)

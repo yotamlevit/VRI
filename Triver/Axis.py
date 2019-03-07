@@ -1,12 +1,15 @@
 # -*- coding: utf-8 -*-
 import analytic_geometry as ag
+from Point import Point
+from StraightLine import StraightLine
+from Vector import Vector
 class Axis(object):
     def __init__(self, torque, power, shaft_diameter):
         self.torque = torque
         self.power = power
         self.shaft_radius = shaft_diameter/2
-        temp = ag.Point(power, torque)
-        self.function = temp.line_function(ag.Point(0, 0))
+        temp = Point(power, torque)
+        self.function = temp.line_function(Point(0, 0))
 
     def get_torque(self, power_precent):
         return self.function(float(self.power*power_precent)/100)

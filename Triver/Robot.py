@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 from Motor import *
 import analytic_geometry as ag
+from Point import Point
+from StraightLine import StraightLine
+from Vector import Vector
 
 FRAME_WEIGHT = 1000
 class Robot:

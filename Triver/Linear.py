@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 from Axis import *
+from Point import Point
+from StraightLine import StraightLine
+from Vector import Vector
 
 class Linear(Axis):
     def __init__(self, torque, power, shaft_diameter):

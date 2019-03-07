@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 import analytic_geometry as ag
+from Point import Point
+from StraightLine import StraightLine
+from Vector import Vector
 import math
 
 class Wall:
@@ -44,24 +47,24 @@ class Wall:
         points = []
         points.append(self.vector.point)
         if 0 < angle < 90:
-            points.append(ag.Point(points[0].x + math.cos(angle*math.pi/180)*length, points[0].y + math.sin(angle*math.pi/180)*length))
-            points.append(ag.Point(points[1].x - math.cos(angle*math.pi/180)*self.width, points[1].y + math.sin(angle*math.pi/180)*self.width))
-            points.append(ag.Point(points[2].x - math.cos(angle*math.pi/180)*length, points[2].y - math.sin(angle*math.pi/180)*length))
+            points.append(Point(points[0].x + math.cos(angle*math.pi/180)*length, points[0].y + math.sin(angle*math.pi/180)*length))
+            points.append(Point(points[1].x - math.cos(angle*math.pi/180)*self.width, points[1].y + math.sin(angle*math.pi/180)*self.width))
+            points.append(Point(points[2].x - math.cos(angle*math.pi/180)*length, points[2].y - math.sin(angle*math.pi/180)*length))
         elif 90 < angle < 180:
             angle -= 90
-            points.append(ag.Point(points[0].x - math.cos(angle*math.pi/180)*length, points[0].y + math.sin(angle*math.pi/180)*length))
-            points.append(ag.Point(points[1].x - math.cos(angle*math.pi/180)*self.width, points[1].y - math.sin(angle*math.pi/180)*self.width))
-            points.append(ag.Point(points[2].x + math.cos(angle*math.pi/180)*length, points[2].y - math.sin(angle*math.pi/180)*length))
+            points.append(Point(points[0].x - math.cos(angle*math.pi/180)*length, points[0].y + math.sin(angle*math.pi/180)*length))
+            points.append(Point(points[1].x - math.cos(angle*math.pi/180)*self.width, points[1].y - math.sin(angle*math.pi/180)*self.width))
+            points.append(Point(points[2].x + math.cos(angle*math.pi/180)*length, points[2].y - math.sin(angle*math.pi/180)*length))
         elif 180 < angle < 270:
             angle -= 180
-            points.append(ag.Point(points[0].x - math.cos(angle*math.pi/180)*length, points[0].y + math.sin(angle*math.pi/180)*length))
-            points.append(ag.Point(points[1].x + math.cos(angle*math.pi/180)*self.width, points[1].y + math.sin(angle*math.pi/180)*self.width))
-            points.append(ag.Point(points[2].x + math.cos(angle*math.pi/180)*length, points[2].y - math.sin(angle*math.pi/180)*length))
+            points.append(Point(points[0].x - math.cos(angle*math.pi/180)*length, points[0].y + math.sin(angle*math.pi/180)*length))
+            points.append(Point(points[1].x + math.cos(angle*math.pi/180)*self.width, points[1].y + math.sin(angle*math.pi/180)*self.width))
+            points.append(Point(points[2].x + math.cos(angle*math.pi/180)*length, points[2].y - math.sin(angle*math.pi/180)*length))
         elif 270 < angle < 360:
             angle -= 270
-            points.append(ag.Point(points[0].x + math.cos(angle*math.pi/180)*length, points[0].y + math.sin(angle*math.pi/180)*length))
-            points.append(ag.Point(points[1].x + math.cos(angle*math.pi/180)*self.width, points[1].y - math.sin(angle*math.pi/180)*self.width))
-            points.append(ag.Point(points[2].x - math.cos(angle*math.pi/180)*length, points[2].y - math.sin(angle*math.pi/180)*length))
+            points.append(Point(points[0].x + math.cos(angle*math.pi/180)*length, points[0].y + math.sin(angle*math.pi/180)*length))
+            points.append(Point(points[1].x + math.cos(angle*math.pi/180)*self.width, points[1].y - math.sin(angle*math.pi/180)*self.width))
+            points.append(Point(points[2].x - math.cos(angle*math.pi/180)*length, points[2].y - math.sin(angle*math.pi/180)*length))
 
         return points
 
@@ -71,10 +74,10 @@ class Wall:
         """
         points = self.get_points()
         func = []
-        func.append(ag.StraightLine(points[0], points[1]))
-        func.append(ag.StraightLine(points[1], points[2]))
-        func.append(ag.StraightLine(points[2], points[3]))
-        func.append(ag.StraightLine(points[0], points[3]))
+        func.append(StraightLine(points[0], points[1]))
+        func.append(StraightLine(points[1], points[2]))
+        func.append(StraightLine(points[2], points[3]))
+        func.append(StraightLine(points[0], points[3]))
         return func
 
     def is_in(self, targets):
@@ -91,11 +94,11 @@ def main():
     """
     Add Documentation here
     """
-    p = ag.Point(100,100)
-    v = ag.Vector(p, 4, 315)
+    p = Point(100,100)
+    v = Vector(p, 4, 315)
     w = Wall(v, 4)
     w.get_points()
-    #p2 = ag.Point(1)
+    #p2 = Point(1)
     print w.__str__()
 
 if __name__ == '__main__':

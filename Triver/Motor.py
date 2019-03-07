@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 from Linear import *
+from Point import Point
+from StraightLine import StraightLine
+from Vector import Vector
 
 class Motor(Linear):
     def __init__(self, name, torque, weight, power, shaft_diameter):

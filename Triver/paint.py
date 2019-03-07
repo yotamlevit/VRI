@@ -5,20 +5,14 @@
 # Created by: PyQt5 UI code generator 5.12
 #
 # WARNING! All changes made in this file will be lost!
-
-from PyQt5.QtWidgets import QWidget, QApplication
-from PyQt5.QtGui import QPainter, QColor, QFont
-from PyQt5.QtCore import Qt
-
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
 from PyQt5 import QtCore, QtGui, QtWidgets
+import time
 
 
 class Ui_MainWindow(object):
-    def __init__(self):
-        super().__init__()
-
-        self.initUI()
-
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 600)
@@ -42,12 +36,46 @@ class Ui_MainWindow(object):
 
 
 
+class MyUI(Ui_MainWindow):
+    def __init__(self, MainWindow):
+        super(MyUI, self).__init__()
+        self.win = MainWindow
+        self.setupUi(self.win)
+        self.x = 0
+        self.y = 0
+        self.painter = QtGui.QPainter()
+        self.timer = QtCore.QTimer()
+        self.timer.timeout.connect(self.draw)
+        self.timer.start()
+
+
+    def draw(self):
+        pass
+        time.sleep(1)
+        try:
+            print("1")
+            self.painter.begin(self.centralwidget)
+            print("2")
+            self.painter.setPen(QColor(Qt.blue))
+            self.painter.drawLine(10,100,100,100)
+            print("3")
+            self.painter.drawRect(self.x, self.x+100, self.y, self.y+100)
+            print("({0}, {1})".format(self.x, self.y))
+            self.x +=1
+            self.y +=1
+            self.painter.end()
+            print("5")
+        except Exception as e:
+            print(e)
+
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
+    ui = MyUI(MainWindow)
+
     MainWindow.show()
-    sys.exit(app.exec_())
+    app.exec_()
+    #sys.exit(app.exec_())
+    #MainWindow.
