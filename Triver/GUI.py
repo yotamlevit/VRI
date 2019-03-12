@@ -1,53 +1,29 @@
-# -*- coding: utf-8 -*-
+import random
+import time
+from Tkinter import *
 
-# Form implementation generated from reading ui file 'C:\Users\cyber\Desktop\paint.ui'
-#
-# Created by: PyQt5 UI code generator 5.12
-#
-# WARNING! All changes made in this file will be lost!
+root = Tk()
 
-from PyQt5.QtWidgets import QWidget, QApplication
-from PyQt5.QtGui import QPainter, QColor, QFont
-from PyQt5.QtCore import Qt
+w = Label(root, text="GAME")
+w.pack()
 
-from PyQt5 import QtCore, QtGui, QtWidgets
+frame = Frame(root, width=300, height=300)
+frame.pack()
 
-
-class Ui_MainWindow(object):
-    def __init__(self):
-        super().__init__()
-
-        self.initUI()
-
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 600)
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
-        self.centralwidget.setObjectName("centralwidget")
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 20))
-        self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
-        self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
-
-        self.retranslateUi(MainWindow)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
-    def retranslateUi(self, MainWindow):
-        _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+L1 = Label(root, text="User Name")
+L1.pack(side=LEFT)
+E1 = Entry(root, bd =5)
+E1.pack(side=LEFT)
 
 
+tiles_letter = ['a', 'b', 'c', 'd', 'e']
 
 
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())
+while len(tiles_letter) > 0:
+    rand = random.choice(tiles_letter)
+    tile_frame = Label(frame, text=rand)
+    tile_frame.pack()
+    frame.after(500)
+    tiles_letter.remove(rand)  # remove that tile from list of tiles
+
+root.mainloop()

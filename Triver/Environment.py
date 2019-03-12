@@ -9,6 +9,7 @@ class Environment:
     def __init__(self, robot, height, width):
         self.objects = {}
         self.robot = robot
+
         self.height = height
         self.width = width
 
@@ -36,7 +37,7 @@ class Environment:
 
     def __str__(self):
         return "Robot is: {}\n" \
-               "Objects are: {}".format(self.robot, self.objects)
+               "Objects are - {}".format(self.robot, self.objects)
 
 def main():
     """

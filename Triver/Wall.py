@@ -3,9 +3,10 @@ import analytic_geometry as ag
 from Point import Point
 from StraightLine import StraightLine
 from Vector import Vector
+import Tkinter
 import math
 
-class Wall:
+class Wall(object):
     def __init__(self, vector, width):
         """
         init for thje wall class
@@ -68,6 +69,17 @@ class Wall:
 
         return points
 
+    def get_point_value(self):
+        points = self.get_points()
+        for i in range(len(points)):
+            points[i] = points[i].get_point()
+        return points
+
+    def draw(self, canvas, color):
+        print "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        points = self.get_point_value()
+        canvas.create_polygon(points, fill=color)
+
     def get_function(self):
         """
         return the sides functions
@@ -97,7 +109,8 @@ def main():
     p = Point(100,100)
     v = Vector(p, 4, 315)
     w = Wall(v, 4)
-    w.get_points()
+    print w.get_points()
+    print w.get_point_value()
     #p2 = Point(1)
     print w.__str__()
 

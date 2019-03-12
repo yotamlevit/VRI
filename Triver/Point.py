@@ -20,6 +20,8 @@ class Point:
     def __repr__(self):
         return 'Point({}, {})'.format(self.x, self.y)
 
+    def get_point(self):
+        return self.x,self.y
     def halfway(self, target):
         midx = (self.x + target.x) / 2
         midy = (self.y + target.y) / 2
