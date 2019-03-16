@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
-import analytic_geometry as ag
 from Point import Point
 from StraightLine import StraightLine
 from Vector import Vector
-import Tkinter
 import math
 
 class Wall(object):
@@ -48,25 +46,41 @@ class Wall(object):
         points = []
         points.append(self.vector.point)
         if 0 < angle < 90:
-            points.append(Point(points[0].x + math.cos(angle*math.pi/180)*length, points[0].y + math.sin(angle*math.pi/180)*length))
-            points.append(Point(points[1].x - math.cos(angle*math.pi/180)*self.width, points[1].y + math.sin(angle*math.pi/180)*self.width))
-            points.append(Point(points[2].x - math.cos(angle*math.pi/180)*length, points[2].y - math.sin(angle*math.pi/180)*length))
+
+            points.append(Point(points[0].x + math.cos(math.radians(angle))*length, points[0].y + math.sin(math.radians(angle))*length))
+            points.append(Point(points[1].x - math.cos(math.radians(angle))*self.width, points[1].y + math.sin(math.radians(angle))*self.width))
+            points.append(Point(points[2].x - math.cos(math.radians(angle))*length, points[2].y - math.sin(math.radians(angle))*length))
         elif 90 < angle < 180:
             angle -= 90
-            points.append(Point(points[0].x - math.cos(angle*math.pi/180)*length, points[0].y + math.sin(angle*math.pi/180)*length))
-            points.append(Point(points[1].x - math.cos(angle*math.pi/180)*self.width, points[1].y - math.sin(angle*math.pi/180)*self.width))
-            points.append(Point(points[2].x + math.cos(angle*math.pi/180)*length, points[2].y - math.sin(angle*math.pi/180)*length))
+            points.append(Point(points[0].x - math.cos(math.radians(angle))*length, points[0].y + math.sin(math.radians(angle))*length))
+            points.append(Point(points[1].x - math.cos(math.radians(angle))*self.width, points[1].y - math.sin(math.radians(angle))*self.width))
+            points.append(Point(points[2].x + math.cos(math.radians(angle))*length, points[2].y - math.sin(math.radians(angle))*length))
         elif 180 < angle < 270:
             angle -= 180
-            points.append(Point(points[0].x - math.cos(angle*math.pi/180)*length, points[0].y + math.sin(angle*math.pi/180)*length))
-            points.append(Point(points[1].x + math.cos(angle*math.pi/180)*self.width, points[1].y + math.sin(angle*math.pi/180)*self.width))
-            points.append(Point(points[2].x + math.cos(angle*math.pi/180)*length, points[2].y - math.sin(angle*math.pi/180)*length))
+            points.append(Point(points[0].x - math.cos(math.radians(angle))*length, points[0].y + math.sin(math.radians(angle))*length))
+            points.append(Point(points[1].x + math.cos(math.radians(angle))*self.width, points[1].y + math.sin(math.radians(angle))*self.width))
+            points.append(Point(points[2].x + math.cos(math.radians(angle))*length, points[2].y - math.sin(math.radians(angle))*length))
         elif 270 < angle < 360:
             angle -= 270
-            points.append(Point(points[0].x + math.cos(angle*math.pi/180)*length, points[0].y + math.sin(angle*math.pi/180)*length))
-            points.append(Point(points[1].x + math.cos(angle*math.pi/180)*self.width, points[1].y - math.sin(angle*math.pi/180)*self.width))
-            points.append(Point(points[2].x - math.cos(angle*math.pi/180)*length, points[2].y - math.sin(angle*math.pi/180)*length))
-
+            points.append(Point(points[0].x + math.cos(math.radians(angle))*length, points[0].y + math.sin(math.radians(angle))*length))
+            points.append(Point(points[1].x + math.cos(math.radians(angle))*self.width, points[1].y - math.sin(math.radians(angle))*self.width))
+            points.append(Point(points[2].x - math.cos(math.radians(angle))*length, points[2].y - math.sin(math.radians(angle))*length))
+        elif angle == 90:
+            points.append(Point(points[0].x, points[0].y + length))
+            points.append(Point(points[1].x + self.width, points[1].y))
+            points.append(Point(points[2].x, points[2].y - length))
+        elif angle == 180:
+            points.append(Point(points[0].x - length, points[0].y))
+            points.append(Point(points[1].x, points[1].y + self.width))
+            points.append(Point(points[2].x - length, points[2].y))
+        elif angle == 270:
+            points.append(Point(points[0].x, points[0].y - length))
+            points.append(Point(points[1].x - self.width, points[1].y))
+            points.append(Point(points[2].x, points[2].y + length))
+        elif angle == 0:
+            points.append(Point(points[0].x + length, points[0].y))
+            points.append(Point(points[1].x, points[1].y - self.width))
+            points.append(Point(points[2].x + length, points[2].y))
         return points
 
     def get_point_value(self):
@@ -76,7 +90,6 @@ class Wall(object):
         return points
 
     def draw(self, canvas, color):
-        print "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
         points = self.get_point_value()
         canvas.create_polygon(points, fill=color)
 
@@ -109,10 +122,10 @@ def main():
     p = Point(100,100)
     v = Vector(p, 4, 315)
     w = Wall(v, 4)
-    print w.get_points()
-    print w.get_point_value()
+    print (w.get_points())
+    print (w.get_point_value())
     #p2 = Point(1)
-    print w.__str__()
+    print (w.__str__())
 
 if __name__ == '__main__':
     main()

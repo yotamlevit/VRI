@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from Motor import *
-import analytic_geometry as ag
 from Point import Point
 from StraightLine import StraightLine
 from Vector import Vector
@@ -9,7 +8,7 @@ from Wall import Wall
 FRAME_WEIGHT = 1000
 class Robot(Wall):
 
-    def __init__(self, name='Bob', wheel=2, color="black", vector=Vector(Point(500,500), 100,90), length=100 , motor1=Motor('motor_1', 48, 210, 5, 6), motor2=Motor('motor_2', 48, 210, 5, 6)):
+    def __init__(self, name='Bob', wheel=2, vector=Vector(Point(500,500), 100,90), length=100 , motor1=Motor('motor_1', 48, 210, 5, 6), motor2=Motor('motor_2', 48, 210, 5, 6)):
         self.name = name
         self.wheel = wheel
         self.motor1 = motor1
@@ -28,11 +27,7 @@ def main():
     """
     Add Documentation here
     """
-    r = Robot()
 
-    print r.motors
-    print r.name
-    print r.wheel
 
 
 if __name__ == '__main__':

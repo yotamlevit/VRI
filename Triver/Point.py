@@ -33,27 +33,7 @@ class Point:
             dy = target.y - self.y
             return (dx * dx + dy * dy) ** 0.5
         else:
-            print "Error"
-            """
-            if 90 != vector.angle and vector.angle and 180 and vector.angle != 270 and vector.angle != 0:
-                tag = math.tan(vector.angle * math.pi/180)
-                a = 1 + tag
-                b = (-2 * vector.point.y * tag) - (2 * vector.point.x)
-                c = (vector.point.x ** 2) + (vector.point.y ** 2) - distance
-                solution = quadratic_equation(a, b, c)
-                print solution
-                if not all(solution):
-                    if 0 < vector.angle < 90 or 270 < vector.angle <= 359:
-                        for s in solution:
-                            if s > vector.x:
-                                solve = s
-                    elif 90 < vector.angle < 270:
-                        for s in solution:
-                            if s < vector.x:
-                                solve = s
-            else:
-                return
-            """
+            print ("Error")
 
 
 
@@ -97,12 +77,12 @@ def main():
     """
     Add Documentation here
     """
-    print quadratic_equation(1,-4,4)
+    print (quadratic_equation(1,-4,4))
     p = Point(100, 100)
     p2 = Point(300,200)
-    print p.__str__()
+    print (p.__str__())
     a = p.line_function(p2)
-    print a(300)
+    print (a(300))
 
 if __name__ == '__main__':
     main()

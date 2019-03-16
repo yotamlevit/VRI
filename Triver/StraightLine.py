@@ -35,7 +35,7 @@ def main():
     p4 = Point(100,100)
     s = StraightLine(p1,p2)
     s2 = StraightLine(p3,p4)
-    print s.is_Colliding(s2)
+    print (s.is_Colliding(s2))
 
 
 if __name__ == '__main__':

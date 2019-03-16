@@ -1,18 +1,33 @@
-# -*- coding: utf-8 -*-
+from Tkinter import *
+root = Tk()
+canvas = Canvas(root)
+canvas.pack()
 
-from googlesearch.googlesearch import GoogleSearch
-response = GoogleSearch().search("something")
-for result in response.results:
-    print("Title: " + result.title)
-    print("Content: " + result.getText())
+def round_rectangle(x1, y1, x2, y2, radius=25, **kwargs):
 
+    points = [x1+radius, y1,
+              x1+radius, y1,
+              x2-radius, y1,
+              x2-radius, y1,
+              x2, y1,
+              x2, y1+radius,
+              x2, y1+radius,
+              x2, y2-radius,
+              x2, y2-radius,
+              x2, y2,
+              x2-radius, y2,
+              x2-radius, y2,
+              x1+radius, y2,
+              x1+radius, y2,
+              x1, y2,
+              x1, y2-radius,
+              x1, y2-radius,
+              x1, y1+radius,
+              x1, y1+radius,
+              x1, y1]
 
-def main():
-    """
-    Add Documentation here
-    """
-    pass  # Replace Pass with Your Code
+    return points
+canvas.create_polygon(round_rectangle(50, 50, 150, 100,radius=20), fill='blue', smooth=True)
+my_rectangle = round_rectangle(50, 50, 150, 100, radius=20, fill="blue")
 
-
-if __name__ == '__main__':
-    main()
+root.mainloop()

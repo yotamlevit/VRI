@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import analytic_geometry as ag
 from Point import Point
 from StraightLine import StraightLine
 from Vector import Vector
@@ -21,8 +20,8 @@ def main():
     Add Documentation here
     """
     a = Axis(42, 5, 6)
-    print a.function
-    print str(a.get_torque(50))
+    print (a.function)
+    print (str(a.get_torque(50)))
 
 
 if __name__ == '__main__':

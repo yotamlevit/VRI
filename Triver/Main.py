@@ -16,7 +16,7 @@ def main():
     w = Wall(v, 10)
     e = Environment(r,1000,1000)
     e.add_obj(w)
-    print e.__str__()
+    print (e.__str__())
 
 
 if __name__ == '__main__':

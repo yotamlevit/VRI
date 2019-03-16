@@ -26,7 +26,7 @@ def main():
     """
     p = Point(100, 100)
     v = Vector(p, 200, 0)
-    print v.__str__()
+    print (v.__str__())
 
 if __name__ == '__main__':
     main()
