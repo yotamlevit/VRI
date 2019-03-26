@@ -10,6 +10,8 @@ class Motor(Linear):
         self.weight = weight
         super(Motor, self).__init__(torque, power, shaft_diameter)
 
+    def move(self):
+
     def __str__(self):
         return 'Name: {}, weight: {}, torque: {}, power: {},\n' \
                '            shaft radius: {}\n          '.format(self.name, self.weight, self.torque, self.power, self.shaft_radius)

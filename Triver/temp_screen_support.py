@@ -31,6 +31,15 @@ def destroy_window():
     top_level.destroy()
     top_level = None
 
+def move(lap):
+    if lap < 1000:
+        return 'w'
+    #if 100 <= lap <2000:
+      #  return 'a'
+    #if 200 <= lap < 3000:
+     #   return 's'
+    return None
+
 if __name__ == '__main__':
     import temp_screen
     temp_screen.vp_start_gui()

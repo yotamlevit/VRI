@@ -119,13 +119,10 @@ def main():
     """
     Add Documentation here
     """
-    p = Point(100,100)
-    v = Vector(p, 4, 315)
-    w = Wall(v, 4)
-    print (w.get_points())
-    print (w.get_point_value())
-    #p2 = Point(1)
-    print (w.__str__())
+    v = Vector(Point(100, 100), 100, 20)
+    w = Wall(v, 10)
+    w.get_function()
+    print w.get_points()
 
 if __name__ == '__main__':
     main()

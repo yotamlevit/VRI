@@ -89,22 +89,26 @@ class env_screen:
         motor2 = Motor('motor_2', 48, 210, 5, 6)
         r = Robot(name, wheel, v_r, length, motor1, motor2)
         w = Wall(v, 10)
-        self.e = Environment(r, 1000,1000)
-        self.e.add_obj(w)
-        print (self.e.__str__())
+        self.env = Environment(r, 1000,1000)
+        self.env.add_obj(w)
+        print (self.env.__str__())
 
+        self.lap = 0
         self.draw()
 
     def draw(self):
+        action = temp_screen_support.move(self.lap)
+        self.env.robot
         self.env_c.delete("all")
-        for key, value in self.e.objects.items():
+        for key, value in self.env.objects.items():
             value.draw(self.env_c, 'green')
-        self.e.robot.draw(self.env_c, 'black')
+        self.lap += 1
+        self.env.robot.draw(self.env_c, 'black')
 
         #self.env_c.create_oval(self.x,self.y,self.x+1,self.y+1, fill="green")
         #self.x+=1
         #self.y+=1
-        self.top.after(4,self.draw)
+        self.top.after(1,self.draw)
 
 
 if __name__ == '__main__':
