@@ -2,9 +2,17 @@
 import math
 
 def slope(dx, dy):
+    """
+    calculates the slope between two points with their dx and dy
+     dx: the difference between the x values of the points
+     dy: he difference between the y values of the points
+    """
     return (float(dy) / float(dx)) if dx else None
 
 def quadratic_equation(a, b, c):
+    """
+
+    """
     d = (b**2) - (4*a*c)
     return (-b - d ** 0.5) / (a * 2), (-b + d ** 0.5) / (a * 2) if d >= 0 else (None, None)
 

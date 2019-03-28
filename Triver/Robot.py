@@ -4,7 +4,7 @@ from Point import Point
 from StraightLine import StraightLine
 from Vector import Vector
 from Wall import Wall
-
+ERR_MOTOR_POWER = 'Err - m[1] - power not in range'
 FRAME_WEIGHT = 1000
 class Robot(Wall):
 
@@ -13,16 +13,19 @@ class Robot(Wall):
         self.wheel = wheel
         self.motor1 = motor1
         self.motor2 = motor2
-        self.power_p = 0
         self.robot_weight = FRAME_WEIGHT + self.motor1.weight + self.motor2.weight
         super(Robot, self).__init__(vector, length)
 
-    def set_power_p(self, new_power_p):
-        self.power_p = new_power_p
-
     def move(self, action):
         if action == 'w':
-            self.motor1.move(action, self.power_p)
+            torque = self.motor1.get_torque(True)
+            if torque is not ERR_MOTOR_POWER:
+                torque2 = self.motor2.get_torque(True)
+                if torque2 is not ERR_MOTOR_POWER:
+                    sum_torque = torque + torque2
+
+            else:
+                return torque
 
     def __str__(self):
         return 'Robot --- : Name: {}, wheel radius: {},\n' \

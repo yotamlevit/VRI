@@ -10,7 +10,7 @@ class Environment:
         self.robot = robot
         self.height = height
         self.width = width
-
+        self.
     def add_obj(self, obj):
         self.objects[str(id(obj))] = obj
 
