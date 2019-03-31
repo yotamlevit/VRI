@@ -18,14 +18,16 @@ class Robot(Wall):
 
     def move(self, action):
         if action == 'w':
+            return 1
+            """
             torque = self.motor1.get_torque(True)
             if torque is not ERR_MOTOR_POWER:
                 torque2 = self.motor2.get_torque(True)
                 if torque2 is not ERR_MOTOR_POWER:
                     sum_torque = torque + torque2
-
             else:
                 return torque
+            """
 
     def __str__(self):
         return 'Robot --- : Name: {}, wheel radius: {},\n' \

@@ -10,10 +10,11 @@ class Environment:
         self.robot = robot
         self.height = height
         self.width = width
-        self.
     def add_obj(self, obj):
         self.objects[str(id(obj))] = obj
 
+    def move_robot(self, action):
+        self.robot.move(action)
     def get_key(self, obj_id):
         """
         returns:

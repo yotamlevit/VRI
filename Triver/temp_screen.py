@@ -98,7 +98,7 @@ class env_screen:
 
     def draw(self):
         action = temp_screen_support.move(self.lap)
-        self.env.robot
+        #self.env.robot
         self.env_c.delete("all")
         for key, value in self.env.objects.items():
             value.draw(self.env_c, 'green')

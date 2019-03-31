@@ -14,6 +14,7 @@ def quadratic_equation(a, b, c):
 
     """
     d = (b**2) - (4*a*c)
+    print d
     return (-b - d ** 0.5) / (a * 2), (-b + d ** 0.5) / (a * 2) if d >= 0 else (None, None)
 
 
@@ -29,7 +30,9 @@ class Point:
         return 'Point({}, {})'.format(self.x, self.y)
 
     def get_point(self):
-        return self.x,self.y
+        return self.x, self.y
+
+
     def halfway(self, target):
         midx = (self.x + target.x) / 2
         midy = (self.y + target.y) / 2
