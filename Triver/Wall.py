@@ -5,24 +5,24 @@ from Vector import Vector
 import math
 
 class Wall(object):
-    def __init__(self, vector, angle,):
+    def __init__(self, line, angle, length):
         """
         init for thje wall class
         """
-        self.vector = vector
-        self.relative_vector = vector2
+        self.main_line = line
+        self.relative_line = StraightLine(self.main_line.start_point, Vector(length, angle-self.vector.angle))
 
     def __str__(self):
-        return 'Vector: {}, Relative Vector: {})'.format(self.vector, self.relative_vector)
+        return 'Line: {}, Relative Line: {})'.format(self.main_line, self.relative_line)
 
     def __repr__(self):
-        return 'Vector: {}, Relative Vector: {})'.format(self.vector, self.relative_vector)
+        return 'Line: {}, Relative Line: {})'.format(self.main_line, self.relative_line)
 
     def change_pos(self, point):
         """
         change the wall position
         """
-        self.vector.change_pos(point)
+        self.main_line.change_pos
 
     def change_rotation(self,angle):
         """
@@ -45,6 +45,7 @@ class Wall(object):
         side1 = self.vector.length
         points = []
         points.append(self.vector.point)
+        points.append(self.relative_vector.point)
         if 0 < angle_x < 90:
 
             points.append(Point(points[0].x + math.cos(math.radians(angle_x))*side1, points[0].y + math.sin(math.radians(angle_x))*side1))
@@ -121,7 +122,7 @@ def main():
     Add Documentation here
     """
     v = Vector(Point(100, 100), 100, 20)
-    w = Wall(v, 10)
+    w = Wall(v, 10, 45)
     w.get_function()
     print w.get_points()
 
