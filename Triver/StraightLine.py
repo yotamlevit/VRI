@@ -39,6 +39,20 @@ class StraightLine:
             self.min_x = self.start_point.x
             self.max_x = self.end_point.x
 
+    def change_angle(self, angle):
+        self.vector.change_angle(angle)
+        self.end_point = self.vector.get_end_point(self.start_point)
+        self.b = self.start_point.y_int(self.end_point)
+        self.fc = self.start_point.line_function(self.end_point)
+        self.equ = self.start_point.line_equation(self.end_point)
+        self.m = self.start_point.slope(self.end_point)
+        if self.start_point.x > self.end_point.x:
+            self.min_x = self.end_point.x
+            self.max_x = self.start_point.x
+        else:
+            self.min_x = self.start_point.x
+            self.max_x = self.end_point.x
+
     def is_Colliding(self, target):
         dm = self.m - target.m
         db = target.b - self.b

@@ -22,13 +22,13 @@ class Wall(object):
         """
         change the wall position
         """
-        self.main_line.change_pos
+        self.main_line.change_pos()
 
     def change_rotation(self,angle):
         """
         change the wall angle
         """
-        self.vector.change_angle(angle)
+        self.main_line.change_angle(angle)
 
     def change_size(self, side1, side2):
         """
