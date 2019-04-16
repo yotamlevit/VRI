@@ -4,10 +4,7 @@ from Point import Point
 from StraightLine import StraightLine
 from Vector import Vector
 class Environment:
-    """
-    this class contains all the objects that
-    are in the virtual enviroment
-    """
+
     def __init__(self, robot, height, width):
         self.objects = {}
         self.robot = robot

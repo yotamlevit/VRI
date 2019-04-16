@@ -37,18 +37,10 @@ class Point:
         midy = (self.y + target.y) / 2
         return Point(midx, midy)
 
-    def point_by_ratio(self, target, ratio):
-        dx = (self.x * ratio[0] + target.x * ratio[1])
-        dy = (self.y * ratio[0] + target.y * ratio[1])
-        return Point(dx,dy)
-
-    def distance(self, find_point, target=None, vector=None, distance=None):
-        if not find_point:
-            dx = target.x - self.x
-            dy = target.y - self.y
-            return (dx * dx + dy * dy) ** 0.5
-        else:
-            print ("Error")
+    def distance(self, target):
+        dx = target.x - self.x
+        dy = target.y - self.y
+        return (dx * dx + dy * dy) ** 0.5
 
 
     def reflect_x(self):
@@ -66,6 +58,9 @@ class Point:
     def slope(self, target):
         return slope(target.x - self.x, target.y - self.y)
 
+    def slope_deg(self, target):
+        return math.degrees(math.atan(self.slope(target)))
+
     def y_int(self, target):       # <= here's the magic
         return self.y - self.slope(target)*self.x if self.slope(target) is not None else None
 
@@ -81,6 +76,7 @@ class Point:
             sign = '+'
         return 'y = {}x {} {}'.format(slope, sign, y_int)
 
+
     def line_function(self, target):
         slope = self.slope(target)
         y_int = self.y_int(target)
@@ -92,12 +88,14 @@ def main():
     """
     Add Documentation here
     """
+    print Point(0,2).slope_deg(Point(1,1))
+    """
     print (quadratic_equation(1,-4,4))
     p = Point(100, 100)
     p2 = Point(300,200)
     print (p.__str__())
     a = p.line_function(p2)
     print (a(300))
-
+    """
 if __name__ == '__main__':
     main()

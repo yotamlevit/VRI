@@ -36,8 +36,6 @@ def move(lap):
         return 'w'
     elif 100 < lap <= 190:
         return 'd'
-    elif 190 < lap <= 400:
-        return 'w'
     #if 100 <= lap <2000:
       #  return 'a'
     #if 200 <= lap < 3000:

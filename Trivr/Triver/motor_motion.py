@@ -7,9 +7,6 @@ ERR_MOTOR_POWER = 'Err - m[1] - power not in range'
 
 
 class Motor_Motion(object):
-    """
-    this function give teh robot's motor motion
-    """
     def __init__(self, torque, power, shaft_diameter):
         self.torque = torque
         self.power = power

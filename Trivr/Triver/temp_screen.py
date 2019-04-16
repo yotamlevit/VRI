@@ -90,7 +90,10 @@ class env_screen:
         motor1 = Motor('motor_1', 48, 210, 5, 6)
         motor2 = Motor('motor_2', 48, 210, 5, 6)
         p = Parallelogram(line, 90, length)
-        r = Robot(p, name, wheel, motor1, motor2)
+        center_v = Vector(1,v_r.angle)
+        center_point = p.get_middle_point()
+        center_line = StraightLine(center_point, center_v)
+        r = Robot(center_line, p, name, wheel, motor1, motor2)
         v = Vector(100, 0)
         p = Point(200, 200)
         line = StraightLine(p, v)
@@ -111,7 +114,7 @@ class env_screen:
             value.draw(self.env_c, 'green')
         self.lap += 1
         self.env.robot.draw(self.env_c, 'black')
-        self.top.after(4,self.draw)
+        self.top.after(8,self.draw)
 
 
 if __name__ == '__main__':

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from Point import Point
 from Vector import Vector
-
+# todo update func
 class StraightLine:
 
     def __init__(self, point, vector):

@@ -35,7 +35,7 @@ class ObjectBuilder(object):
         self.shape.move_by_units(units)
 
     def rotate(self, value):
-        self.shape.change_rotation_by_value(value)
+        self.shape.change_rotation(value)
 
 def main():
     """
