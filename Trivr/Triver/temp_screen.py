@@ -111,7 +111,7 @@ class env_screen:
             value.draw(self.env_c, 'green')
         self.lap += 1
         self.env.robot.draw(self.env_c, 'black')
-        self.top.after(100,self.draw)
+        self.top.after(4,self.draw)
 
 
 if __name__ == '__main__':

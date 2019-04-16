@@ -5,6 +5,9 @@ from StraightLine import StraightLine
 from Vector import Vector
 ERR_MOTOR_POWER = 'Err - m[1] - power not in range'
 class Motor(Linear):
+    """
+    this class stimulate a motor for a robot
+    """
     def __init__(self, name, torque, weight, power, shaft_diameter):
         self.name = name
         self.weight = weight

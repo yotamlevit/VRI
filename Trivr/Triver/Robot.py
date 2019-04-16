@@ -13,7 +13,7 @@ FRAME_WEIGHT = 1000
 
 
 class Robot(ObjectBuilder):
-    def __init__(self, shape, name='Bob', wheel=2, motor1=Motor('motor_1', 48, 210, 5, 6), motor2=Motor('motor_2', 48, 210, 5, 6)):
+    def __init__(self, shape, center_g, name='Bob', wheel=2, motor1=Motor('motor_1', 48, 210, 5, 6), motor2=Motor('motor_2', 48, 210, 5, 6)):
         self.name = name
         self.wheel = wheel
         self.motor1 = motor1

@@ -44,9 +44,15 @@ class Vector:
 
     def change_length(self, length):
         self.length = length
+        temp = (math.cos(math.radians(self.angle))*self.length,math.sin(math.radians(self.angle))*self.length)
+        self.algebraic_vector = Point(temp[0], temp[1])
 
     def change_angle(self, angle):
         self.angle = angle
+        if self.angle >= 360:
+            self.angle -= 360
+        temp = (math.cos(math.radians(self.angle))*self.length,math.sin(math.radians(self.angle))*self.length)
+        self.algebraic_vector = Point(temp[0], temp[1])
 
     def get_end_point(self, point):
         return Point(point.x + self.algebraic_vector.x, point.y + self.algebraic_vector.y)

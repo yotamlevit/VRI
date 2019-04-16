@@ -5,6 +5,10 @@ from StraightLine import StraightLine
 
 
 class Hit_Box(Parallelogram):
+    """
+    this class is used for creating a hit box
+    for the enviroment objects
+    """
     def __init__(self, min_point, max_point):
         v_min = Vector(max_point.y - min_point.y, 270)
         min_line = StraightLine(min_point, v_min)

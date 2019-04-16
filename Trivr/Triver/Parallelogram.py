@@ -4,7 +4,7 @@ from Vector import Vector
 from Point import Point
 
 class Parallelogram(object):
-    def __init__(self, line, angle, length):
+    def __init__(self, line, angle, length, center_g=None):
         """
         init for thje wall class
         """
@@ -13,6 +13,12 @@ class Parallelogram(object):
         self.relative_line = StraightLine(self.main_line.end_point, Vector(length, 180-(angle-self.main_line.vector.angle)))
         self.main_line_2 = StraightLine(self.relative_line.end_point, Vector(self.main_line.vector.length, 180+self.main_line.vector.angle))
         self.relative_line_2 = StraightLine(self.main_line_2.end_point, Vector(self.relative_line.vector.length, 180 + self.relative_line.vector.angle))
+        self.center_g = center_g
+        if self.center_g is not None:
+            self.center_g_ratio = center_g
+            temp = self.main_line.start_point.point_by_ratio(self.main_line.end_point, self.center_g_ratio[0])
+            temp2 = self.main_line_2.start_point.point_by_ratio(self.main_line_2.end_point, self.center_g_ratio[0])
+            self.center_g = temp.point_by_ratio(temp2, self.center_g_ratio[1])
 
     def __str__(self):
         return 'Parallelogram: \nLine: {} ,\nRelative Line: {},\nLine Two: {} ,\nRelative Two: {} \n)'.format(self.main_line, self.relative_line, self.main_line_2, self.relative_line_2)
@@ -25,12 +31,20 @@ class Parallelogram(object):
         self.relative_line.change_angle(180-angle)
         self.main_line_2.change_pos(self.relative_line.end_point)
         self.relative_line_2.change_angle(180-self.relative_line.vector.angle)
+        if self.center_g is not None:
+            temp = self.main_line.start_point.point_by_ratio(self.main_line.end_point, self.center_g_ratio[0])
+            temp2 = self.main_line_2.start_point.point_by_ratio(self.main_line_2.end_point, self.center_g_ratio[0])
+            self.center_g = temp.point_by_ratio(temp2, self.center_g_ratio[1])
 
     def move_by_units(self, units):
         self.main_line.move_to_new_point_by_units(units)
         self.relative_line = StraightLine(self.main_line.end_point, Vector(self.relative_line.vector.length, 180-(self.relative_angle-self.main_line.vector.angle)))
         self.main_line_2 = StraightLine(self.relative_line.end_point, Vector(self.main_line.vector.length, 180+self.main_line.vector.angle))
         self.relative_line_2 = StraightLine(self.main_line_2.end_point, Vector(self.relative_line.vector.length, 180 + self.relative_line.vector.angle))
+        if self.center_g is not None:
+            temp = self.main_line.start_point.point_by_ratio(self.main_line.end_point, self.center_g_ratio[0])
+            temp2 = self.main_line_2.start_point.point_by_ratio(self.main_line_2.end_point, self.center_g_ratio[0])
+            self.center_g = temp.point_by_ratio(temp2, self.center_g_ratio[1])
 
     def change_pos(self, point):
         """
@@ -40,6 +54,10 @@ class Parallelogram(object):
         self.relative_line = StraightLine(self.main_line.end_point, Vector(self.relative_line.vector.length, 180-(self.relative_angle-self.main_line.vector.angle)))
         self.main_line_2 = StraightLine(self.relative_line.end_point, Vector(self.main_line.vector.length, 180+self.main_line.vector.angle))
         self.relative_line_2 = StraightLine(self.main_line_2.end_point, Vector(self.relative_line.vector.length, 180 + self.relative_line.vector.angle))
+        if self.center_g is not None:
+            temp = self.main_line.start_point.point_by_ratio(self.main_line.end_point, self.center_g_ratio[0])
+            temp2 = self.main_line_2.start_point.point_by_ratio(self.main_line_2.end_point, self.center_g_ratio[0])
+            self.center_g = temp.point_by_ratio(temp2, self.center_g_ratio[1])
 
     def change_rotation_by_value(self, value):
         self.change_rotation(self.main_line.vector.angle + value)
@@ -52,6 +70,10 @@ class Parallelogram(object):
         self.relative_line = StraightLine(self.main_line.end_point, Vector(self.relative_line.vector.length, 180-(self.relative_angle-self.main_line.vector.angle)))
         self.main_line_2 = StraightLine(self.relative_line.end_point, Vector(self.main_line.vector.length, 180+self.main_line.vector.angle))
         self.relative_line_2 = StraightLine(self.main_line_2.end_point, Vector(self.relative_line.vector.length, 180 + self.relative_line.vector.angle))
+        if self.center_g is not None:
+            temp = self.main_line.start_point.point_by_ratio(self.main_line.end_point, self.center_g_ratio[0])
+            temp2 = self.main_line_2.start_point.point_by_ratio(self.main_line_2.end_point, self.center_g_ratio[0])
+            self.center_g = temp.point_by_ratio(temp2, self.center_g_ratio[1])
 
     def change_size(self, side1, side2):
         """
@@ -61,6 +83,10 @@ class Parallelogram(object):
         self.relative_line.change_length(side2)
         self.main_line_2 = StraightLine(self.relative_line.end_point, Vector(self.main_line.vector.length, 180+self.main_line.vector.angle))
         self.relative_line_2 = StraightLine(self.main_line_2.end_point, Vector(self.relative_line.vector.length, 180 + self.relative_line.vector.angle))
+        if self.center_g is not None:
+            temp = self.main_line.start_point.point_by_ratio(self.main_line.end_point, self.center_g_ratio[0])
+            temp2 = self.main_line_2.start_point.point_by_ratio(self.main_line_2.end_point, self.center_g_ratio[0])
+            self.center_g = temp.point_by_ratio(temp2, self.center_g_ratio[1])
 
     def get_points(self):
         """

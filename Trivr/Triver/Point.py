@@ -37,6 +37,11 @@ class Point:
         midy = (self.y + target.y) / 2
         return Point(midx, midy)
 
+    def point_by_ratio(self, target, ratio):
+        dx = (self.x * ratio[0] + target.x * ratio[1])
+        dy = (self.y * ratio[0] + target.y * ratio[1])
+        return Point(dx,dy)
+
     def distance(self, find_point, target=None, vector=None, distance=None):
         if not find_point:
             dx = target.x - self.x
