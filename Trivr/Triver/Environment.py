@@ -3,18 +3,20 @@ from Wall import Wall
 from Point import Point
 from StraightLine import StraightLine
 from Vector import Vector
+from Parallelogram import Parallelogram
 class Environment:
 
     def __init__(self, robot, height, width):
         self.objects = {}
         self.robot = robot
-        self.height = height
-        self.width = width
+        self.boundaries = Parallelogram(StraightLine(Point(0,0), Vector(width,0)), 90, height)
 
     def check_robot_in_boundaries(self):
-        #self.robot.get
-        pass
-
+        if self.robot.hit_box.is_Colliding(self.boundaries):
+            print("Box is hit")
+            if self.robot.shape.is_Colliding(self.boundaries):
+                return True
+        return False
 
     def add_obj(self, obj):
         self.objects[str(id(obj))] = obj

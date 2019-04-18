@@ -5,10 +5,10 @@ from Point import Point
 import sys
 
 def find_edges(points):
-    x_max = -1 * sys.maxint
-    y_max = -1 * sys.maxint
-    x_min = sys.maxint
-    y_min = sys.maxint
+    x_max = -1 * sys.maxsize
+    y_max = -1 * sys.maxsize
+    x_min = sys.maxsize
+    y_min = sys.maxsize
     for point in points:
         if point.x > x_max:
             x_max = point.x

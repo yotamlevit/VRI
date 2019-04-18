@@ -19,6 +19,13 @@ class StraightLine:
         else:
             self.min_x = self.start_point.x
             self.max_x = self.end_point.x
+        if self.start_point.y > self.end_point.y:
+            self.min_y = self.end_point.y
+            self.max_y = self.start_point.y
+        else:
+            self.min_y = self.start_point.y
+            self.max_y = self.end_point.y
+
 
     def __str__(self):
         return '(Vector: {}, Start Point: {}, End Point: {}, Vector Function: {})'.format(self.vector, self.start_point, self.end_point, self.equ)
@@ -39,6 +46,12 @@ class StraightLine:
         else:
             self.min_x = self.start_point.x
             self.max_x = self.end_point.x
+        if self.start_point.y > self.end_point.y:
+            self.min_y = self.end_point.y
+            self.max_y = self.start_point.y
+        else:
+            self.min_y = self.start_point.y
+            self.max_y = self.end_point.y
 
     def change_pos(self, point):
         self.start_point = point
@@ -53,6 +66,12 @@ class StraightLine:
         else:
             self.min_x = self.start_point.x
             self.max_x = self.end_point.x
+        if self.start_point.y > self.end_point.y:
+            self.min_y = self.end_point.y
+            self.max_y = self.start_point.y
+        else:
+            self.min_y = self.start_point.y
+            self.max_y = self.end_point.y
 
     def change_angle(self, angle):
         self.vector.change_angle(angle)
@@ -67,34 +86,57 @@ class StraightLine:
         else:
             self.min_x = self.start_point.x
             self.max_x = self.end_point.x
+        if self.start_point.y > self.end_point.y:
+            self.min_y = self.end_point.y
+            self.max_y = self.start_point.y
+        else:
+            self.min_y = self.start_point.y
+            self.max_y = self.end_point.y
 
     def move_to_new_point_by_units(self, units):
+        if self.start_point.x == 2.2737367544323206e-13:
+            print(self.vector.skalar_mul_direction(units))
+            print('1')
         dis_to_add = self.vector.skalar_mul_direction(units)
         point_val = self.start_point.get_point()
         self.change_pos(Point(point_val[0] + dis_to_add[0], point_val[1] + dis_to_add[1]))
 
     def is_Colliding(self, target):
-        dm = self.m - target.m
-        db = target.b - self.b
-        if dm == 0:
-            return False, 0
-        else:
-            answer = db/dm
-            if self.min_x > answer or self.max_x < answer:
+        print('self: ' + self.__str__() + '\n')
+        print('t: ' + target.__str__() + '\n')
+        if self.m is not None and target.m is not None:
+            dm = self.m - target.m
+            db = target.b - self.b
+            if dm == 0:
+                return False, 0
+            else:
+                answer = db/dm
+                if self.min_x <= answer <= self.max_x and target.min_x <= answer <= target.max_x :
+                    return True, db/dm
                 return False, answer
-            return True, db/dm
+        elif self.m is None and target.m is None:
+            print('self ' + str(self.min_x))
+            print('t' + str(target.min_x))
+            if self.min_x == target.min_x:
+                print("1")
+                return True, self.min_x
+            return False, None
+        elif self.m is None:
+            if target.min_x <= self.min_x <= target.max_x and self.min_y < target.fc(self.min_x) < self.max_y:
+                return True, self.min_x
+            return False, None
+        else:
+            if self.min_x <= target.min_x <= self.max_x and target.min_y < self.fc(target.min_x) < target.max_y:
+                return True, target.min_x
+            return False, None
 
 def main():
     """
     Add Documentation here
     """
-    p1 = Point(100,100)
-    v = Vector(5, 53.13)
-    p2 = Point(200,200)
-    s = StraightLine(p1,v)
-    print s
-    #s2 = StraightLine(p3,p4)
-    #print (s.is_Colliding(s2))
+    s1 = StraightLine(Point(0,0), Vector(1000,90))
+    s2 = StraightLine(Point(750,200), Vector(250,0))
+    print(s1.is_Colliding(s2))
 
 
 if __name__ == '__main__':

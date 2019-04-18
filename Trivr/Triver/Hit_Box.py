@@ -11,6 +11,8 @@ class Hit_Box(Parallelogram):
         width = max_point.x - min_point.x
         super(Hit_Box, self).__init__(min_line, 90, width)
 
+
+
 def main():
     """
     Add Documentation here

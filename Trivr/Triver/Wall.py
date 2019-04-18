@@ -21,9 +21,9 @@ def main():
     line = StraightLine(p, v)
     p = Parallelogram(line, 120, 5)
     w = Wall(p)
-    print w.shape.get_points()
-    print w.shape.get_equation()
-    print w.__str__()
+    print (w.shape.get_points())
+    print (w.shape.get_equation())
+    print (w.__str__())
 
 if __name__ == '__main__':
     main()

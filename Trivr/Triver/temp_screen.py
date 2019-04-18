@@ -107,14 +107,17 @@ class env_screen:
         self.draw()
 
     def draw(self):
+        print(self.env.robot.shape.main_line.start_point)
         action = temp_screen_support.move(self.lap)
         self.env.move_robot(action)
+        if self.env.check_robot_in_boundaries():
+            print ("crash")
         self.env_c.delete("all")
         for key, value in self.env.objects.items():
             value.draw(self.env_c, 'green')
         self.lap += 1
         self.env.robot.draw(self.env_c, 'black')
-        self.top.after(8,self.draw)
+        self.top.after(10,self.draw)
 
 
 if __name__ == '__main__':

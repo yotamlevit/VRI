@@ -81,21 +81,22 @@ class Point:
         slope = self.slope(target)
         y_int = self.y_int(target)
         def fn(x):
-            return slope*x + y_int
+            return slope*float(x) + y_int
         return fn
 
 def main():
     """
     Add Documentation here
     """
-    print Point(0,2).slope_deg(Point(1,1))
-    """
+    print (Point(0,2).slope_deg(Point(1,1)))
+
     print (quadratic_equation(1,-4,4))
     p = Point(100, 100)
     p2 = Point(300,200)
     print (p.__str__())
+    print(p.line_equation(p2))
     a = p.line_function(p2)
     print (a(300))
-    """
+
 if __name__ == '__main__':
     main()
