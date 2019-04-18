@@ -51,11 +51,20 @@ class Parallelogram(object):
         change the wall angle
         """
         v_angle = self.main_line.start_point.slope_deg(center_line.start_point)
+        print(center_line.start_point)
+        print(v_angle)
+        if self.main_line.start_point.x < center_line.start_point.x and self.main_line.start_point.y > center_line.start_point.y or self.main_line.start_point.x < center_line.start_point.x and self.main_line.start_point.y < center_line.start_point.y:
+            v_angle = 180 + v_angle
+        #elif self.main_line.start_point.x < center_line.start_point.x and self.main_line.start_point.y < center_line.start_point.y:
+        #    v_angle = 180 + v_angle
         temp_v = Vector(self.main_line.start_point.distance(center_line.start_point), v_angle + 360)
         temp_line = StraightLine(center_line.start_point, temp_v)
+        print( 'line:   '  + str(temp_line.equ))
         temp_line.change_angle(temp_line.vector.angle + angle)
+        print("new_point:   " + str(temp_line.end_point))
         self.main_line.change_pos(temp_line.end_point)
-        self.main_line.change_angle(self.main_line.vector.angle + angle)
+        new_angle = self.main_line.vector.angle + angle
+        self.main_line.change_angle(new_angle)
         self.relative_line = StraightLine(self.main_line.end_point, Vector(self.relative_line.vector.length, 180-(self.relative_angle-self.main_line.vector.angle)))
         self.main_line_2 = StraightLine(self.relative_line.end_point, Vector(self.main_line.vector.length, 180+self.main_line.vector.angle))
         self.relative_line_2 = StraightLine(self.main_line_2.end_point, Vector(self.relative_line.vector.length, 180 + self.relative_line.vector.angle))

@@ -22,10 +22,22 @@ class Vector:
 
     def change_length(self, length):
         self.length = length
+        if self.angle == 90 or self.angle == 270:
+            temp = (0,math.sin(math.radians(self.angle))*self.length)
+        elif self.angle == 180:
+            temp = (math.cos(math.radians(self.angle))* self.length,0)
+        else:
+            temp = (math.cos(math.radians(self.angle))* self.length,math.sin(math.radians(self.angle))*self.length)
+        self.algebraic_vector = Point(temp[0], temp[1])
 
     def change_angle(self, angle):
         self.angle = angle
-        temp = (math.cos(math.radians(self.angle))*self.length,math.sin(math.radians(self.angle))*self.length)
+        if self.angle == 90 or self.angle == 270:
+            temp = (0,math.sin(math.radians(self.angle))*self.length)
+        elif self.angle == 180:
+            temp = (math.cos(math.radians(self.angle))* self.length,0)
+        else:
+            temp = (math.cos(math.radians(self.angle))* self.length,math.sin(math.radians(self.angle))*self.length)
         self.algebraic_vector = Point(temp[0], temp[1])
 
     def get_end_point(self, point):
@@ -43,7 +55,9 @@ def main():
     """
     Add Documentation here
     """
-    v = Vector(4, 60)
+    v = Vector(4, 90)
+    print(v.algebraic_vector)
+    v.change_angle(91)
     print (v.__str__())
 
 if __name__ == '__main__':

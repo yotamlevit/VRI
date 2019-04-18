@@ -94,16 +94,16 @@ class StraightLine:
             self.max_y = self.end_point.y
 
     def move_to_new_point_by_units(self, units):
-        if self.start_point.x == 2.2737367544323206e-13:
-            print(self.vector.skalar_mul_direction(units))
-            print('1')
         dis_to_add = self.vector.skalar_mul_direction(units)
         point_val = self.start_point.get_point()
+        #if -0.5 < point_val[0] + dis_to_add[0] < 0.5:
+        #    self.change_pos(Point(0, point_val[1] + dis_to_add[1]))
+        #elif -0.5 < point_val[1] + dis_to_add[1] < 0.5:
+         #   self.change_pos(Point(point_val[0] + dis_to_add[0], 0))
+        #else:
         self.change_pos(Point(point_val[0] + dis_to_add[0], point_val[1] + dis_to_add[1]))
 
     def is_Colliding(self, target):
-        print('self: ' + self.__str__() + '\n')
-        print('t: ' + target.__str__() + '\n')
         if self.m is not None and target.m is not None:
             dm = self.m - target.m
             db = target.b - self.b
@@ -115,10 +115,7 @@ class StraightLine:
                     return True, db/dm
                 return False, answer
         elif self.m is None and target.m is None:
-            print('self ' + str(self.min_x))
-            print('t' + str(target.min_x))
             if self.min_x == target.min_x:
-                print("1")
                 return True, self.min_x
             return False, None
         elif self.m is None:
@@ -135,6 +132,7 @@ def main():
     Add Documentation here
     """
     s1 = StraightLine(Point(0,0), Vector(1000,90))
+    s1.change_angle(130)
     s2 = StraightLine(Point(750,200), Vector(250,0))
     print(s1.is_Colliding(s2))
 

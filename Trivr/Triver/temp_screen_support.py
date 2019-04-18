@@ -6,6 +6,7 @@
 #    Mar 12, 2019 01:41:10 PM +0200  platform: Windows NT
 
 import sys
+import time
 
 try:
     import Tkinter as tk
@@ -32,7 +33,7 @@ def destroy_window():
     top_level = None
 
 def move(lap):
-    if lap < 100:
+    if lap < 250:
         return 'w'
     elif 100 < lap <= 190:
         return 'd'

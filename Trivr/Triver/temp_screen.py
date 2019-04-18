@@ -85,8 +85,8 @@ class env_screen:
         wheel = 2
         color = "black"
         length = 100
-        v_r = Vector(200, 90)
-        line = StraightLine(Point(500,500), v_r)
+        v_r = Vector(200, 180)
+        line = StraightLine(Point(250,500), v_r)
         motor1 = Motor('motor_1', 48, 210, 5, 6)
         motor2 = Motor('motor_2', 48, 210, 5, 6)
         p = Parallelogram(line, 90, length)
@@ -107,17 +107,17 @@ class env_screen:
         self.draw()
 
     def draw(self):
-        print(self.env.robot.shape.main_line.start_point)
+        #print(self.env.robot.shape)
         action = temp_screen_support.move(self.lap)
         self.env.move_robot(action)
-        if self.env.check_robot_in_boundaries():
+        if not self.env.check_robot_in_boundaries():
             print ("crash")
         self.env_c.delete("all")
         for key, value in self.env.objects.items():
             value.draw(self.env_c, 'green')
         self.lap += 1
         self.env.robot.draw(self.env_c, 'black')
-        self.top.after(10,self.draw)
+        self.top.after(100,self.draw)
 
 
 if __name__ == '__main__':

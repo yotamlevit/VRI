@@ -33,9 +33,15 @@ class ObjectBuilder(object):
 
     def move_by_units(self, units):
         self.shape.move_by_units(units)
+        if type(self.shape) == Parallelogram:
+            edge_points = find_edges(self.shape.get_points())
+            self.hit_box = Hit_Box(edge_points[0], edge_points[1])
 
     def rotate(self, value):
         self.shape.change_rotation(value)
+        if type(self.shape) == Parallelogram:
+            edge_points = find_edges(self.shape.get_points())
+            self.hit_box = Hit_Box(edge_points[0], edge_points[1])
 
 def main():
     """

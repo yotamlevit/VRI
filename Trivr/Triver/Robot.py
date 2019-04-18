@@ -40,6 +40,7 @@ class Robot(ObjectBuilder):
 
     def rotate(self, angle):
         self.shape.change_rotation(angle, self.center_line)
+        self.center_line.change_angle(self.center_line.vector.angle + angle)
 
     def __str__(self):
         return 'Robot --- : Name: {}, wheel radius: {},\n' \

@@ -15,8 +15,13 @@ class Environment:
         if self.robot.hit_box.is_Colliding(self.boundaries):
             print("Box is hit")
             if self.robot.shape.is_Colliding(self.boundaries):
-                return True
-        return False
+                return False
+        return True
+
+    def check_crash(self):
+        pass
+        #for obj in self.objects:
+         #   if
 
     def add_obj(self, obj):
         self.objects[str(id(obj))] = obj

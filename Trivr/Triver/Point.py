@@ -59,7 +59,19 @@ class Point:
         return slope(target.x - self.x, target.y - self.y)
 
     def slope_deg(self, target):
-        return math.degrees(math.atan(self.slope(target)))
+        tag = self.slope(target)
+        if tag is None:
+            if target.y < self.y:
+                return 90
+            else:
+                return 270
+        deg = math.degrees(math.atan(tag))
+        print('t    ' + str(tag))
+        print('d    ' + str(deg))
+        #if deg < 0:
+         #   print("1")
+        #    deg = 180 + deg
+        return deg
 
     def y_int(self, target):       # <= here's the magic
         return self.y - self.slope(target)*self.x if self.slope(target) is not None else None
@@ -88,6 +100,8 @@ def main():
     """
     Add Documentation here
     """
+    print(Point(450.0, 600.0).slope(Point(450, 700)))
+    print(Point(450.0, 600.0).slope_deg(Point(450, 700)))
     print (Point(0,2).slope_deg(Point(1,1)))
 
     print (quadratic_equation(1,-4,4))
