@@ -2,9 +2,15 @@
 from Point import *
 import math
 
+TAB = '    '
 
 class Vector:
     def __init__(self, length, angle):
+        """
+        this class describes a polar vector with it's way-vector as algebraic description
+        ;length: the vector's length
+        ;angle: the vector's angle from the positive side of the x and y
+        """
         self.length = length
         if angle >= 360:
             angle -= 360
@@ -18,9 +24,17 @@ class Vector:
         self.algebraic_vector = Point(temp[0], temp[1])
 
     def __str__(self):
+        """
+        describes the vector in words
+        ;return: a string that contains all the information on the vector
+        """
         return 'length: {} , angle: {} , '.format(self.length, self.angle) + 'Way Vector ' + self.algebraic_vector.__repr__()
 
     def change_length(self, length):
+        """
+        this function changes the vector's length and update the vector's argument
+        ;length: the new length
+        """
         self.length = length
         if self.angle == 90 or self.angle == 270:
             temp = (0,math.sin(math.radians(self.angle))*self.length)
@@ -31,6 +45,10 @@ class Vector:
         self.algebraic_vector = Point(temp[0], temp[1])
 
     def change_angle(self, angle):
+        """
+        this function changes the vector's angle and update the vector's argument
+        ;angle: the new angle
+        """
         self.angle = angle
         if self.angle == 90 or self.angle == 270:
             temp = (0,math.sin(math.radians(self.angle))*self.length)
@@ -49,7 +67,8 @@ class Vector:
         return dirc[0]*uni, dirc[1]*uni
 
 
-
+    def convert_vector_to_txt(self):
+        return '<Vector><length>' + str(self.length) + '</length><angle>' + str(self.angle) + '</angle>'
 
 def main():
     """

@@ -4,6 +4,10 @@ from Point import Point
 from StraightLine import StraightLine
 from Vector import Vector
 from Parallelogram import Parallelogram
+
+def Enviroment_from_file():
+    pass
+
 class Environment:
 
     def __init__(self, robot, height, width):
@@ -18,10 +22,24 @@ class Environment:
                 return False
         return True
 
-    def check_crash(self):
+    def check_object_object_crash(self):
         pass
-        #for obj in self.objects:
-         #   if
+
+    def check_obj_robot_crash(self):
+        for obj in self.objects:
+            #print(self.objects[obj])
+            if self.robot.hit_box.is_Colliding(self.objects[obj].hit_box) and\
+                    self.robot.shape.is_Colliding(self.objects[obj].shape):
+                return True
+        return False
+
+    def check_crash(self):
+        crash = []
+        crash.append(not self.check_robot_in_boundaries())
+        crash.append(self.check_obj_robot_crash())
+        if True in crash:
+            return True
+        return False
 
     def add_obj(self, obj):
         self.objects[str(id(obj))] = obj
@@ -48,8 +66,21 @@ class Environment:
     def clear_environment(self):
         self.objects.clear()
 
+    def convert_env_to_file(self):
+        txt = '<Enviroment>'
+        txt += '<height>' + str(self.boundaries.main_line.vector.length) + '</height><width>' +\
+               str(self.boundaries.relative_line.vector.length) + '</width>'
+        txt += self.robot.convert_robot_to_txt()
+        txt+='<Objects>'
+        for obj in self.objects:
+            ob = self.objects[obj]
+            txt += ob.convert_obj_to_txt()
+        txt += '</Objects>'
+        with open('environment.txt', 'w') as file_handle:
+            file_handle.write(txt)
+
     def __str__(self):
-        return "Robot is: {}\n" \
+        return "The Enviroment is: \nRobot is: {}\n" \
                "Objects are - {}".format(self.robot, self.objects)
 
 def main():

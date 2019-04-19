@@ -10,9 +10,9 @@ class Motor(Linear):
         self.weight = weight
         #self.current_power_precent = 0
         self.move_power_precent = 0
-        self.torque = torque
-        self.power = power
-        self.shaft_radius = shaft_diameter/2
+        #self.torque = torque
+        #self.power = power
+        #self.shaft_radius = shaft_diameter/2
         peak_p = Point(power, torque)
         self.function = peak_p.line_function(Point(0, 0))
         super(Motor, self).__init__(torque, power, shaft_diameter)
@@ -34,6 +34,11 @@ class Motor(Linear):
     def __str__(self):
         return 'Name: {}, weight: {}, torque: {}, power: {},\n' \
                '            shaft radius: {}\n          '.format(self.name, self.weight, self.torque, self.power, self.shaft_radius)
+
+    def convert_motor_to_txt(self):
+        return '<name>' + self.name + '</name><torque>' + str(self.torque) + '</torque><weight>' +\
+               str(self.weight) + '</weight><power>' + str(self.power) + '</power><shaft_diameter>' +\
+               str(self.shaft_radius*2) + '</shaft_diameter>'
 
 def main():
     """

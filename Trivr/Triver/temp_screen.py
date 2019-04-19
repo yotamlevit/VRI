@@ -5,6 +5,7 @@
 #  in conjunction with Tcl version 8.6
 #    Mar 12, 2019 01:41:06 PM +0200  platform: Windows NT
 import sys
+import time
 from Motor import Motor
 from Environment import Environment
 from Robot import Robot
@@ -81,7 +82,6 @@ class env_screen:
 
         self.x = 0
         self.y = 0
-        name = 'Bob'
         wheel = 2
         color = "black"
         length = 100
@@ -93,7 +93,7 @@ class env_screen:
         center_v = Vector(1,v_r.angle)
         center_point = p.get_middle_point()
         center_line = StraightLine(center_point, center_v)
-        r = Robot(center_line, p, name, wheel, motor1, motor2)
+        r = Robot(center_line, p, wheel, motor1, motor2)
         v = Vector(100, 0)
         p = Point(200, 200)
         line = StraightLine(p, v)
@@ -102,7 +102,7 @@ class env_screen:
         self.env = Environment(r, 1000, 1000)
         self.env.add_obj(w)
         print (self.env.__str__())
-
+        self.env.convert_env_to_file()
         self.lap = 0
         self.draw()
 
@@ -110,16 +110,18 @@ class env_screen:
         #print(self.env.robot.shape)
         action = temp_screen_support.move(self.lap)
         self.env.move_robot(action)
-        if not self.env.check_robot_in_boundaries():
+        if self.env.check_crash():
             print ("crash")
+            self.crashed()
         self.env_c.delete("all")
         for key, value in self.env.objects.items():
             value.draw(self.env_c, 'green')
         self.lap += 1
         self.env.robot.draw(self.env_c, 'black')
-        self.top.after(100,self.draw)
+        self.top.after(10,self.draw)
 
-
+    def crashed(self):
+        time.sleep(60)
 if __name__ == '__main__':
     vp_start_gui()
 

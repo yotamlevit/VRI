@@ -127,6 +127,8 @@ class StraightLine:
                 return True, target.min_x
             return False, None
 
+    def convert_line_to_txt(self):
+        return '<StraightLine>' + self.start_point.convert_point_to_txt() + self.vector.convert_vector_to_txt() + '</StraightLine>'
 def main():
     """
     Add Documentation here

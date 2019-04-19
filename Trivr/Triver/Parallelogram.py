@@ -51,17 +51,15 @@ class Parallelogram(object):
         change the wall angle
         """
         v_angle = self.main_line.start_point.slope_deg(center_line.start_point)
-        print(center_line.start_point)
-        print(v_angle)
+        #print(center_line.start_point)
+        #print(v_angle)
         if self.main_line.start_point.x < center_line.start_point.x and self.main_line.start_point.y > center_line.start_point.y or self.main_line.start_point.x < center_line.start_point.x and self.main_line.start_point.y < center_line.start_point.y:
             v_angle = 180 + v_angle
-        #elif self.main_line.start_point.x < center_line.start_point.x and self.main_line.start_point.y < center_line.start_point.y:
-        #    v_angle = 180 + v_angle
         temp_v = Vector(self.main_line.start_point.distance(center_line.start_point), v_angle + 360)
         temp_line = StraightLine(center_line.start_point, temp_v)
-        print( 'line:   '  + str(temp_line.equ))
+        #print( 'line:   '  + str(temp_line.equ))
         temp_line.change_angle(temp_line.vector.angle + angle)
-        print("new_point:   " + str(temp_line.end_point))
+        #print("new_point:   " + str(temp_line.end_point))
         self.main_line.change_pos(temp_line.end_point)
         new_angle = self.main_line.vector.angle + angle
         self.main_line.change_angle(new_angle)
@@ -106,6 +104,9 @@ class Parallelogram(object):
     def draw(self, canvas, color):
         points = self.get_point_value()
         canvas.create_polygon(points, fill=color)
+
+    def convert_shape_to_txt(self):
+        return '<Parallelogram>' + self.main_line.convert_line_to_txt() + '<angle>' + str(self.relative_angle) + '</angle>' + '<length>' + str(self.relative_line.vector.length) + '</length></Parallelogram>'
 
     def is_Colliding(self, shape):
         """

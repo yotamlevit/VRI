@@ -66,11 +66,8 @@ class Point:
             else:
                 return 270
         deg = math.degrees(math.atan(tag))
-        print('t    ' + str(tag))
-        print('d    ' + str(deg))
-        #if deg < 0:
-         #   print("1")
-        #    deg = 180 + deg
+        #print('t    ' + str(tag))
+        #print('d    ' + str(deg))
         return deg
 
     def y_int(self, target):       # <= here's the magic
@@ -96,6 +93,8 @@ class Point:
             return slope*float(x) + y_int
         return fn
 
+    def convert_point_to_txt(self):
+        return '<Point><x>' + str(self.x) + '</x><y>' + str(self.y) + '</y></Point>'
 def main():
     """
     Add Documentation here

@@ -33,11 +33,11 @@ def destroy_window():
     top_level = None
 
 def move(lap):
-    if lap < 250:
-        return 'w'
-    elif 100 < lap <= 190:
+    if lap < 90:
+        return 's'
+    elif 90 < lap <= 180:
         return 'd'
-    if 100 <= lap <2000:
+    if 180 <= lap <2000:
         return 'w'
     #if 200 <= lap < 3000:
      #   return 's'

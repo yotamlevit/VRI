@@ -12,6 +12,9 @@ class Wall(ObjectBuilder):
     def __init__(self, shape):
         super(Wall, self).__init__(shape)
 
+    def convert_obj_to_txt(self):
+        return '<Wall>' + self.shape.convert_shape_to_txt() + '</Wall>'
+
 def main():
     """
     Add Documentation here
