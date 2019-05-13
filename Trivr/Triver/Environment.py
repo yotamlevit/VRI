@@ -5,8 +5,44 @@ from StraightLine import StraightLine
 from Vector import Vector
 from Parallelogram import Parallelogram
 
-def Enviroment_from_file():
-    pass
+def environment_from_file(env_name):
+    with open(env_name + '.txt','r') as file_handle:
+        env = file_handle.read()
+    env = clear_env_string(env)
+    bool_table = {'environment' : False, '/environment': False,
+                  'height': False, '/height': False, 'width': False, '/width': False,
+                  'robot': False, 'center_of_mass': False, '/center_of_mass': False,
+                  'shape': False, '/shape': False, 'wheel': False, '/wheel': False,
+                  'motor_1': False, '/motor_1': False, 'motor_2': False, '/motor_2': False,
+                  '/robot': False, 'objects': False, '/objects': False}
+    if env[0].lower() == 'environment' and env[len(env)-1].lower() == '/environment':
+        bool_table['environment'] = True
+        bool_table['/environment'] = True
+        del env[0]
+        del env[len(env)-1]
+    i = 0
+    while i < len(env):
+        bool_table[env[i].lower()] = True
+        index = 0
+        #for element in env:
+            #if element
+            #index+=1
+        bool_table[env[i+2].lower()] = env[i+1]
+        for num in range(i, i+3):
+            del env[i]
+        i = 0
+    if False in bool_table.values():
+        print("False")
+    else:
+        print("true")
+
+def clear_env_string(str):
+    env = str.replace(' ', '')
+    env = str.replace('\n','')
+    env = str.replace('<','')
+    env = str.split('>')
+    env.pop()
+    return env
 
 class Environment:
 
@@ -26,10 +62,11 @@ class Environment:
         pass
 
     def check_obj_robot_crash(self):
+        #print("2")
         for obj in self.objects:
-            #print(self.objects[obj])
-            if self.robot.hit_box.is_Colliding(self.objects[obj].hit_box) and\
-                    self.robot.shape.is_Colliding(self.objects[obj].shape):
+            #if self.robot.hit_box.is_Colliding(self.objects[obj].hit_box):
+                #print("1")
+            if self.robot.shape.is_Colliding(self.objects[obj].shape):
                 return True
         return False
 

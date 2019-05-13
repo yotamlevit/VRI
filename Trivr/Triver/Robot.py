@@ -27,6 +27,8 @@ class Robot(ObjectBuilder):
             self.center_line.move_to_new_point_by_units(1)
         elif action == "d":
             self.rotate(1)
+        elif action == 'a':
+            self.rotate(-1)
         elif action == 's':
             self.move_by_units(-1)
             self.center_line.move_to_new_point_by_units(-1)
@@ -50,7 +52,7 @@ class Robot(ObjectBuilder):
 
     def convert_robot_to_txt(self):
         return '<Robot><center_of_mass>' + self.center_line.start_point.convert_point_to_txt() +\
-               '</center_of_mass>' + self.shape.convert_shape_to_txt() + '<wheel>' + str(self.wheel) + '</wheel><motor_1>' +\
+               '</center_of_mass><shape>' + self.shape.convert_shape_to_txt() + '</shape><wheel>' + str(self.wheel) + '</wheel><motor_1>' +\
                self.motor1.convert_motor_to_txt() + '</motor_1><motor_2>' + self.motor2.convert_motor_to_txt() + '</motor_2></Robot>'
 
 

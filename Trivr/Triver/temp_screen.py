@@ -108,6 +108,7 @@ class env_screen:
 
     def draw(self):
         #print(self.env.robot.shape)
+        print(self.env.robot.hit_box)
         action = temp_screen_support.move(self.lap)
         self.env.move_robot(action)
         if self.env.check_crash():

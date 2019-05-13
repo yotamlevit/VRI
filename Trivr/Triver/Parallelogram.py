@@ -2,6 +2,7 @@
 from StraightLine import StraightLine
 from Vector import Vector
 from Point import Point
+import sys
 
 class Parallelogram(object):
     def __init__(self, line, angle, length):
@@ -105,6 +106,23 @@ class Parallelogram(object):
         points = self.get_point_value()
         canvas.create_polygon(points, fill=color)
 
+    def get_edge_points(self):
+        points = self.get_points()
+        max_x = -1*sys.maxsize
+        max_y = -1*sys.maxsize
+        min_x = sys.maxsize
+        min_y = sys.maxsize
+        for point in points:
+            if point.x > max_x:
+                max_x = point.x
+            elif point.x < min_x:
+                min_x = point.x
+            if point.y > max_y:
+                max_y = point.y
+            elif point.y < min_y:
+                min_y = point.y
+        return Point(max_x,max_y),Point(min_x, min_y)
+
     def convert_shape_to_txt(self):
         return '<Parallelogram>' + self.main_line.convert_line_to_txt() + '<angle>' + str(self.relative_angle) + '</angle>' + '<length>' + str(self.relative_line.vector.length) + '</length></Parallelogram>'
 
@@ -119,6 +137,7 @@ class Parallelogram(object):
                 if line.is_Colliding(target)[0]:
                     return True
         return False
+
 def main():
     """
     Add Documentation here
