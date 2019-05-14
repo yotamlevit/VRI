@@ -1,15 +1,73 @@
 # -*- coding: utf-8 -*-
 from Motor import *
 from Point import Point
-from StraightLine import StraightLine
+import StraightLine
+import Motor as Mot
 from Vector import Vector
 from Parallelogram import Parallelogram
 from Hit_Box import Hit_Box
 from Wall import Wall
 import sys
+import Parallelogram
+from Error import Error
 from Object_Builder import ObjectBuilder
 ERR_MOTOR_POWER = 'Err - m[1] - power not in range'
 FRAME_WEIGHT = 1000
+
+def robot_from_file(root):
+    center_of_mass = (False, None)
+    shape = (False, None)
+    wheel =(False, None)
+    motor1 = (False, None)
+    motor2 = (False, None)
+    for child in root:
+        tag = child.tag.lower()
+        if tag == 'center_of_mass':
+            temp_s = StraightLine.line_from_file(child)
+            if temp_s[0]:
+                center_of_mass = (True, temp_s[1])
+            else:
+                return temp_s
+        elif tag == 'shape':
+            temp_p = Parallelogram.parallelogram_from_file(child)
+            if temp_p[0]:
+                shape = (True, temp_p[1])
+            else:
+                return temp_p
+        elif tag == 'wheel':
+            try:
+                wheel = (True, int(child.text))
+            except:
+                print(Error.error.get('r_1w'))
+            finally:
+                return False, [Error.error.get('r_1w')]
+        elif tag == 'motor':
+            if not motor1[0]:
+                temp_m = Mot.motor_from_file(child)
+                if temp_m[0]:
+                    motor1 = (True, temp_m[1])
+                else:
+                    return temp_m
+            else:
+                temp_m = Mot.motor_from_file(child)
+                if temp_m[0]:
+                    motor2 = (True, temp_m[1])
+                else:
+                    return temp_m
+    if center_of_mass[0] and shape[0] and wheel[0] and motor1[0] and motor2[0]:
+        return True, Robot(center_of_mass[1], shape[1], wheel[1], motor1[1], motor2[1])
+    er = []
+    if not center_of_mass[0]:
+        er.append(Error.error.get('r_0c'))
+    if not shape[0]:
+        er.append(Error.error.get('r_0s'))
+    if not wheel[0]:
+        er.append(Error.error.get('r_0w'))
+    if not motor1[0]:
+        er.append(Error.error.get('r_0m1'))
+    if not motor2[0]:
+        er.append(Error.error.get('r_0m2'))
+    return False, er
 
 
 class Robot(ObjectBuilder):

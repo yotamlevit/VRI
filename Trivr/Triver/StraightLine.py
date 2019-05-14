@@ -1,6 +1,37 @@
 # -*- coding: utf-8 -*-
 from Point import Point
 from Vector import Vector
+import Point as p
+import Vector as v
+from Error import Error
+
+
+def line_from_file(root):
+    point = (False, None)
+    vector = (False, None)
+    for child in root:
+        tag = child.tag.lower()
+        if tag == 'point':
+            temp_p = p.point_from_file(child)
+            if temp_p[0]:
+                point = (True, temp_p[1])
+            else:
+                return temp_p
+        elif tag == 'vector':
+            temp_v = v.vector_from_file(child)
+            if temp_v[0]:
+                vector = (True, temp_v[1])
+            else:
+                return temp_v
+    if point[0] and vector[0]:
+        return True, StraightLine(point[1], vector[1])
+    elif not point[0] and not vector[0]:
+        return False, [Error.error.get('s_0p'), Error.error.get('s_0v')]
+    elif not point[0]:
+        return False, [Error.error.get('s_0p')]
+    else:
+        return False, [Error.error.get('s_0v')]
+
 # todo update func
 class StraightLine:
 

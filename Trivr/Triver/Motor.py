@@ -1,9 +1,67 @@
 # -*- coding: utf-8 -*-
 from Linear import *
 from Point import Point
+from Error import Error
 from StraightLine import StraightLine
 from Vector import Vector
+
+
 ERR_MOTOR_POWER = 'Err - m[1] - power not in range'
+
+
+def motor_from_file(root):
+    name = (False, None)
+    torque = (False, None)
+    weight = (False, None)
+    power = (False, None)
+    shaft_diameter = (False, None)
+    for child in root:
+        tag = child.tag.lower()
+        if tag == 'name':
+            name = (True, child.text)
+        elif tag == 'torque':
+            try:
+                torque = (True, int(child.text))
+            except:
+                print(Error.error.get('m_1t'))
+            finally:
+                return False, [Error.error.get('m_1t')]
+        elif tag == 'weight':
+            try:
+                weight = (True, int(child.text))
+            except:
+                print(Error.error.get('m_1w'))
+            finally:
+                return False, [Error.error.get('m_1w')]
+        elif tag == 'power':
+            try:
+                power = (True, int(child.text))
+            except:
+                print(Error.error.get('m_1p'))
+            finally:
+                return False, [Error.error.get('m_1p')]
+        elif tag == 'shaft_diameter':
+            try:
+                shaft_diameter = (True, int(child.text))
+            except:
+                print(Error.error.get('m_1s'))
+            finally:
+                return False, [Error.error.get('m_1s')]
+    if name[0] and torque[0] and weight[0] and power[0] and shaft_diameter[0]:
+        return True, Motor(name[1], torque[1], weight[1], power[1], shaft_diameter[1])
+    er = []
+    if not name[0]:
+        er.append(Error.error.get('m_0n'))
+    if not torque[0]:
+        er.append(Error.error.get('m_0t'))
+    if not weight[0]:
+        er.append(Error.error.get('m_0w'))
+    if not power[0]:
+        er.append(Error.error.get('m_0p'))
+    if not shaft_diameter[0]:
+        er.append(Error.error.get('m_0s'))
+    return False, er
+
 class Motor(Linear):
     def __init__(self, name, torque, weight, power, shaft_diameter):
         self.name = name

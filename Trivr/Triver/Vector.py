@@ -4,6 +4,36 @@ import math
 
 TAB = '    '
 
+
+def vector_from_file(root):
+    length = (False, None)
+    angle = (False, None)
+    for child in root:
+        tag = child.tag.lower()
+        if tag == 'length':
+            try:
+                length = (True, int(child.text))
+            except:
+                print(Error.error.get('v_1l'))
+            finally:
+                return False, [Error.error.get('v_1l')]
+        elif tag == 'angle':
+            try:
+                angle = (True, int(child.text))
+            except:
+                print(Error.error.get('v_1a'))
+            finally:
+                return False, [Error.error.get('v_1a')]
+    if length[0] and angle[0]:
+        return True, Vector(length[1], angle[1])
+    elif not length[0] and not angle[0]:
+        return False, [Error.error.get('v_0l'), Error.error.get('v_0a')]
+    elif not length[0]:
+        return False, [Error.error.get('v_0l')]
+    else:
+        return False, [Error.error.get('v_0a')]
+
+
 class Vector:
     def __init__(self, length, angle):
         """
@@ -68,7 +98,7 @@ class Vector:
 
 
     def convert_vector_to_txt(self):
-        return '<Vector><length>' + str(self.length) + '</length><angle>' + str(self.angle) + '</angle>'
+        return '<Vector><length>' + str(self.length) + '</length><angle>' + str(self.angle) + '</angle></Vector>'
 
 def main():
     """

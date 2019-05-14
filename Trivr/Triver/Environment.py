@@ -1,48 +1,37 @@
 # -*- coding: utf-8 -*-
+import xml.etree.cElementTree as ET
 from Wall import Wall
 from Point import Point
 from StraightLine import StraightLine
 from Vector import Vector
 from Parallelogram import Parallelogram
+from Motor import Motor
+from Robot import Robot
+import Robot as rob
+from Error import Error
 
-def environment_from_file(env_name):
-    with open(env_name + '.txt','r') as file_handle:
-        env = file_handle.read()
-    env = clear_env_string(env)
-    bool_table = {'environment' : False, '/environment': False,
-                  'height': False, '/height': False, 'width': False, '/width': False,
-                  'robot': False, 'center_of_mass': False, '/center_of_mass': False,
-                  'shape': False, '/shape': False, 'wheel': False, '/wheel': False,
-                  'motor_1': False, '/motor_1': False, 'motor_2': False, '/motor_2': False,
-                  '/robot': False, 'objects': False, '/objects': False}
-    if env[0].lower() == 'environment' and env[len(env)-1].lower() == '/environment':
-        bool_table['environment'] = True
-        bool_table['/environment'] = True
-        del env[0]
-        del env[len(env)-1]
-    i = 0
-    while i < len(env):
-        bool_table[env[i].lower()] = True
-        index = 0
-        #for element in env:
-            #if element
-            #index+=1
-        bool_table[env[i+2].lower()] = env[i+1]
-        for num in range(i, i+3):
-            del env[i]
-        i = 0
-    if False in bool_table.values():
-        print("False")
-    else:
-        print("true")
 
-def clear_env_string(str):
-    env = str.replace(' ', '')
-    env = str.replace('\n','')
-    env = str.replace('<','')
-    env = str.split('>')
-    env.pop()
-    return env
+def environment_from_file(file_name='environment.xml'):
+    tree = ET.parse(file_name)
+    root = tree.getroot()
+    height = (False, None)
+    width = (False, None)
+    robot = (False, None)
+    objects = (False, None)
+    for child in root:
+        print(child.tag)
+        tag = child.tag.lower()
+        if tag == 'height':
+            try:
+                height = (True, int(child.text))
+            except:
+                print(Error.error.get('e_1h'))
+            finally:
+                return False, [Error.error.get('e_1h')]
+        elif tag == 'width':
+            width = (True, child.text)
+        elif tag == 'robot':
+            robot = (True, rob.robot_from_file(child))
 
 class Environment:
 
@@ -113,7 +102,8 @@ class Environment:
             ob = self.objects[obj]
             txt += ob.convert_obj_to_txt()
         txt += '</Objects>'
-        with open('environment.txt', 'w') as file_handle:
+        txt += '</Enviroment>'
+        with open('environment.xml', 'w') as file_handle:
             file_handle.write(txt)
 
     def __str__(self):
@@ -124,17 +114,28 @@ def main():
     """
     Add Documentation here
     """
-    v = Vector(Point(100,100), 100, 20)
-    w = Wall(v, 10)
-    e = Environment()
-    e.add_obj(w)
-    print (e.__str__())
-    e.delete_obj(id(w))
-    print (e.__str__())
-    print (id(w))
-    e.add_obj(w)
-    e.clear_environment()
-    print (e.__str__())
+    wheel = 2
+    color = "black"
+    length = 100
+    v_r = Vector(200, 180)
+    line = StraightLine(Point(250,500), v_r)
+    motor1 = Motor('motor_1', 48, 210, 5, 6)
+    motor2 = Motor('motor_2', 48, 210, 5, 6)
+    p = Parallelogram(line, 90, length)
+    center_v = Vector(1,v_r.angle)
+    center_point = p.get_middle_point()
+    center_line = StraightLine(center_point, center_v)
+    r = Robot(center_line, p, wheel, motor1, motor2)
+    v = Vector(100, 0)
+    p = Point(200, 200)
+    line = StraightLine(p, v)
+    p = Parallelogram(line, 120, 200)
+    w = Wall(p)
+    env = Environment(r, 1000, 1000)
+    env.add_obj(w)
+    print (env.__str__())
+    env.convert_env_to_file()
+    environment_from_file()
     pass  # Replace Pass with Your Code
 
 

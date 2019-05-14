@@ -1,5 +1,35 @@
 # -*- coding: utf-8 -*-
 import math
+from Error import Error
+
+def point_from_file(root):
+    x = (False, None)
+    y = (False, None)
+    for child in root:
+        tag = child.tag.lower()
+        if tag == 'x':
+            try:
+                x = (True, int(child.text))
+            except:
+                print(Error.error.get('p_1x'))
+            finally:
+                return False, [Error.error.get('p_1x')]
+        elif tag == 'y':
+            try:
+                y = (True, int(child.text))
+            except:
+                print(Error.error.get('p_1y'))
+            finally:
+                return False, [Error.error.get('p_1y')]
+    if x[0] and y[0]:
+        return True, Point(x[1], y[1])
+    elif not x[0] and not y[0]:
+        return False, [Error.error.get('p_0x'), Error.error.get('p_0y')]
+    elif not x[0]:
+        return False, [Error.error.get('p_0x')]
+    else:
+        return False, [Error.error.get('p_0y')]
+
 
 def slope(dx, dy):
     """
