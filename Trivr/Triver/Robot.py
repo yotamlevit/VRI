@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from Motor import *
-from Point import Point
+import Point
 import StraightLine
 import Motor as Mot
 from Vector import Vector
@@ -23,13 +23,17 @@ def robot_from_file(root):
     for child in root:
         tag = child.tag.lower()
         if tag == 'center_of_mass':
-            temp_s = StraightLine.line_from_file(child)
-            if temp_s[0]:
-                center_of_mass = (True, temp_s[1])
+            for sub_c in child:
+                if sub_c.tag.lower() == 'point':
+                    temp_p = Point.point_from_file(sub_c)
+            if temp_p[0]:
+                center_of_mass = (True, temp_p[1])
             else:
-                return temp_s
+                return temp_p
         elif tag == 'shape':
-            temp_p = Parallelogram.parallelogram_from_file(child)
+            for sub_c in child:
+                if sub_c.tag.lower() == 'parallelogram':
+                    temp_p = Parallelogram.parallelogram_from_file(sub_c)
             if temp_p[0]:
                 shape = (True, temp_p[1])
             else:
@@ -37,25 +41,25 @@ def robot_from_file(root):
         elif tag == 'wheel':
             try:
                 wheel = (True, int(child.text))
-            except:
+            except ValueError:
                 print(Error.error.get('r_1w'))
-            finally:
                 return False, [Error.error.get('r_1w')]
-        elif tag == 'motor':
-            if not motor1[0]:
-                temp_m = Mot.motor_from_file(child)
-                if temp_m[0]:
-                    motor1 = (True, temp_m[1])
-                else:
-                    return temp_m
+        elif tag == 'motor_1':
+            temp_m = Mot.motor_from_file(child)
+            if temp_m[0]:
+                motor1 = (True, temp_m[1])
             else:
-                temp_m = Mot.motor_from_file(child)
-                if temp_m[0]:
-                    motor2 = (True, temp_m[1])
-                else:
-                    return temp_m
+                return temp_m
+        elif tag == 'motor_2':
+            temp_m = Mot.motor_from_file(child)
+            if temp_m[0]:
+                motor2 = (True, temp_m[1])
+            else:
+                return temp_m
     if center_of_mass[0] and shape[0] and wheel[0] and motor1[0] and motor2[0]:
-        return True, Robot(center_of_mass[1], shape[1], wheel[1], motor1[1], motor2[1])
+        center_v = Vector(1, shape[1].main_line.vector.angle)
+        center_line = StraightLine.StraightLine(center_of_mass[1], center_v)
+        return True, Robot(center_line, shape[1], wheel[1], motor1[1], motor2[1])
     er = []
     if not center_of_mass[0]:
         er.append(Error.error.get('r_0c'))

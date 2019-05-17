@@ -22,30 +22,26 @@ def motor_from_file(root):
         elif tag == 'torque':
             try:
                 torque = (True, int(child.text))
-            except:
+            except ValueError:
                 print(Error.error.get('m_1t'))
-            finally:
                 return False, [Error.error.get('m_1t')]
         elif tag == 'weight':
             try:
                 weight = (True, int(child.text))
-            except:
+            except ValueError:
                 print(Error.error.get('m_1w'))
-            finally:
                 return False, [Error.error.get('m_1w')]
         elif tag == 'power':
             try:
                 power = (True, int(child.text))
-            except:
+            except ValueError:
                 print(Error.error.get('m_1p'))
-            finally:
                 return False, [Error.error.get('m_1p')]
         elif tag == 'shaft_diameter':
             try:
-                shaft_diameter = (True, int(child.text))
-            except:
+                shaft_diameter = (True, float(child.text))
+            except ValueError:
                 print(Error.error.get('m_1s'))
-            finally:
                 return False, [Error.error.get('m_1s')]
     if name[0] and torque[0] and weight[0] and power[0] and shaft_diameter[0]:
         return True, Motor(name[1], torque[1], weight[1], power[1], shaft_diameter[1])

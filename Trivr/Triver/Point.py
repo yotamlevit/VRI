@@ -6,20 +6,19 @@ def point_from_file(root):
     x = (False, None)
     y = (False, None)
     for child in root:
+        #print(child.tag)
         tag = child.tag.lower()
         if tag == 'x':
             try:
-                x = (True, int(child.text))
-            except:
+                x = (True, float(child.text))
+            except ValueError:
                 print(Error.error.get('p_1x'))
-            finally:
                 return False, [Error.error.get('p_1x')]
         elif tag == 'y':
             try:
-                y = (True, int(child.text))
-            except:
+                y = (True, float(child.text))
+            except ValueError:
                 print(Error.error.get('p_1y'))
-            finally:
                 return False, [Error.error.get('p_1y')]
     if x[0] and y[0]:
         return True, Point(x[1], y[1])

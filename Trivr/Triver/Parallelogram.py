@@ -12,7 +12,7 @@ def parallelogram_from_file(root):
     length = (False, None)
     for child in root:
         tag = child.tag.lower()
-        if tag == 'line':
+        if tag == 'straightline':
             temp_l = st.line_from_file(child)
             if temp_l[0]:
                 line = (True, temp_l[1])
@@ -21,16 +21,14 @@ def parallelogram_from_file(root):
         elif tag == 'angle':
             try:
                 angle = (True, int(child.text))
-            except:
+            except ValueError:
                 print(Error.error.get('p_1a'))
-            finally:
                 return False, [Error.error.get('p_1a')]
         elif tag == 'length':
             try:
                 length = (True, int(child.text))
-            except:
+            except ValueError:
                 print(Error.error.get('p_1l'))
-            finally:
                 return False, [Error.error.get('p_1l')]
     if line[0] and angle[0] and length[0]:
         return True, Parallelogram(line[1], angle[1], length[1])

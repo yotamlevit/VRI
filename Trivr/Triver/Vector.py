@@ -13,16 +13,14 @@ def vector_from_file(root):
         if tag == 'length':
             try:
                 length = (True, int(child.text))
-            except:
+            except ValueError:
                 print(Error.error.get('v_1l'))
-            finally:
                 return False, [Error.error.get('v_1l')]
         elif tag == 'angle':
             try:
                 angle = (True, int(child.text))
-            except:
+            except ValueError:
                 print(Error.error.get('v_1a'))
-            finally:
                 return False, [Error.error.get('v_1a')]
     if length[0] and angle[0]:
         return True, Vector(length[1], angle[1])

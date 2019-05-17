@@ -82,6 +82,8 @@ class env_screen:
 
         self.x = 0
         self.y = 0
+
+
         wheel = 2
         color = "black"
         length = 100
@@ -119,7 +121,7 @@ class env_screen:
             value.draw(self.env_c, 'green')
         self.lap += 1
         self.env.robot.draw(self.env_c, 'black')
-        self.top.after(10,self.draw)
+        self.top.after(1000,self.draw)
 
     def crashed(self):
         time.sleep(60)
