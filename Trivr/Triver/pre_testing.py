@@ -135,7 +135,7 @@ class Get_Sim_Data:
         self.action_lable.configure(foreground="#ffffff")
         self.action_lable.configure(highlightbackground="#d9d9d9")
         self.action_lable.configure(highlightcolor="black")
-        self.action_lable.configure(text='''Action File:''')
+        self.action_lable.configure(text='''Logic File:''')
 
         self.action_file = tk.Entry(top)
         self.action_file.place(relx=0.48, rely=0.39,height=20, relwidth=0.463)
@@ -149,7 +149,7 @@ class Get_Sim_Data:
         self.action_file.configure(selectbackground="#c4c4c4")
         self.action_file.configure(selectforeground="black")
         self.action_file.configure(width=164)
-        self.action_file.insert(0, 'action.text')
+        self.action_file.insert(0, 'logic.py')
 
 
         self.error = tk.Label(top)
