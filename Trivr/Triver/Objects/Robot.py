@@ -4,7 +4,7 @@ from Movement.Motor import *
 from analytic_geometry import Point
 from analytic_geometry import StraightLine
 from analytic_geometry.Vector import Vector
-from Shape import Parallelogram
+from Shape.Parallelogram import Parallelogram
 from Error import Error
 from Objects.Object_Builder import ObjectBuilder
 ERR_MOTOR_POWER = 'Err - m[1] - power not in range'
@@ -31,15 +31,6 @@ class Robot(ObjectBuilder):
         elif action == 's':
             self.move_by_units(-1)
             self.center_line.move_to_new_point_by_units(-1)
-            """
-            torque = self.motor1.get_torque(True)
-            if torque is not ERR_MOTOR_POWER:
-                torque2 = self.motor2.get_torque(True)
-                if torque2 is not ERR_MOTOR_POWER:
-                    sum_torque = torque + torque2
-            else:
-                return torque
-            """
 
     def rotate(self, angle):
         self.shape.change_rotation(angle, self.center_line)

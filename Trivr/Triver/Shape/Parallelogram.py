@@ -6,42 +6,6 @@ from analytic_geometry import StraightLine as st
 import sys
 from Error import Error
 
-def parallelogram_from_file(root):
-    line = (False, None)
-    angle = (False, None)
-    length = (False, None)
-    for child in root:
-        tag = child.tag.lower()
-        if tag == 'straightline':
-            temp_l = st.line_from_file(child)
-            if temp_l[0]:
-                line = (True, temp_l[1])
-            else:
-                return temp_l
-        elif tag == 'angle':
-            try:
-                angle = (True, int(child.text))
-            except ValueError:
-                print(Error.error.get('p_1a'))
-                return False, [Error.error.get('p_1a')]
-        elif tag == 'length':
-            try:
-                length = (True, int(child.text))
-            except ValueError:
-                print(Error.error.get('p_1l'))
-                return False, [Error.error.get('p_1l')]
-    if line[0] and angle[0] and length[0]:
-        return True, Parallelogram(line[1], angle[1], length[1])
-    er = []
-    if not line[0]:
-        er.append(Error.error.get('p_0line'))
-    if not angle[0]:
-        er.append(Error.error.get('p_0a'))
-    if not length[0]:
-        er.append(Error.error.get('p_0l'))
-    return False, er
-
-
 
 class Parallelogram(object):
     def __init__(self, line, angle, length):
@@ -176,6 +140,42 @@ class Parallelogram(object):
                 if line.is_Colliding(target)[0]:
                     return True
         return False
+
+    @staticmethod
+    def parallelogram_from_file(root):
+        line = (False, None)
+        angle = (False, None)
+        length = (False, None)
+        for child in root:
+            tag = child.tag.lower()
+            if tag == 'straightline':
+                temp_l = st.line_from_file(child)
+                if temp_l[0]:
+                    line = (True, temp_l[1])
+                else:
+                    return temp_l
+            elif tag == 'angle':
+                try:
+                    angle = (True, int(child.text))
+                except ValueError:
+                    print(Error.error.get('p_1a'))
+                    return False, [Error.error.get('p_1a')]
+            elif tag == 'length':
+                try:
+                    length = (True, int(child.text))
+                except ValueError:
+                    print(Error.error.get('p_1l'))
+                    return False, [Error.error.get('p_1l')]
+        if line[0] and angle[0] and length[0]:
+            return True, Parallelogram(line[1], angle[1], length[1])
+        er = []
+        if not line[0]:
+            er.append(Error.error.get('p_0line'))
+        if not angle[0]:
+            er.append(Error.error.get('p_0a'))
+        if not length[0]:
+            er.append(Error.error.get('p_0l'))
+        return False, er
 
 def main():
     """

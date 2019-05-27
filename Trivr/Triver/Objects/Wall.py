@@ -20,7 +20,7 @@ class Wall(ObjectBuilder):
         for child in root:
             tag = child.tag.lower()
             if tag == 'parallelogram':
-                tamp_p = para.parallelogram_from_file(child)
+                tamp_p = Parallelogram.parallelogram_from_file(child)
                 if tamp_p[0]:
                     shape = (True, tamp_p[1])
                 else:
