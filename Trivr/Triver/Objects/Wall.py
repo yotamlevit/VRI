@@ -7,27 +7,29 @@ from Objects.Object_Builder import ObjectBuilder
 from Shape import Parallelogram as para
 from Error import Error
 
-def wall_from_file(root):
-    shape = (False, None)
-    for child in root:
-        tag = child.tag.lower()
-        if tag == 'parallelogram':
-            tamp_p = para.parallelogram_from_file(child)
-            if tamp_p[0]:
-                shape = (True, tamp_p[1])
-            else:
-                print('In Wall:\n')
-                return tamp_p
-    if shape[0]:
-        return True, Wall(shape[1])
-    return False, [Error.error.get('w_0s')]
-
 class Wall(ObjectBuilder):
     def __init__(self, shape):
         super(Wall, self).__init__(shape)
 
     def convert_obj_to_txt(self):
         return '<Wall>' + self.shape.convert_shape_to_txt() + '</Wall>'
+
+    @staticmethod
+    def wall_from_file(root):
+        shape = (False, None)
+        for child in root:
+            tag = child.tag.lower()
+            if tag == 'parallelogram':
+                tamp_p = para.parallelogram_from_file(child)
+                if tamp_p[0]:
+                    shape = (True, tamp_p[1])
+                else:
+                    print('In Wall:\n')
+                    return tamp_p
+        if shape[0]:
+            return True, Wall(shape[1])
+        return False, [Error.error.get('w_0s')]
+
 
 def main():
     """

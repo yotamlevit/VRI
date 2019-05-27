@@ -3,23 +3,6 @@ from Shape.Hit_Box import Hit_Box
 from analytic_geometry.Point import Point
 import sys
 
-def find_edges(points):
-    x_max = -1 * sys.maxsize
-    y_max = -1 * sys.maxsize
-    x_min = sys.maxsize
-    y_min = sys.maxsize
-    for point in points:
-        if point.x > x_max:
-            x_max = point.x
-        if point.x < x_min:
-            x_min = point.x
-        if point.y > y_max:
-            y_max = point.y
-        if point.y < y_min:
-            y_min = point.y
-    return Point(x_min, y_min), Point(x_max, y_max)
-
-
 class ObjectBuilder(object):
     def __init__(self, shape):
         self.shape = shape
@@ -35,6 +18,23 @@ class ObjectBuilder(object):
     def rotate(self, value):
         self.shape.change_rotation(value)
         self.hit_box = Hit_Box(self.shape)
+
+    @staticmethod
+    def find_edges(points):
+        x_max = -1 * sys.maxsize
+        y_max = -1 * sys.maxsize
+        x_min = sys.maxsize
+        y_min = sys.maxsize
+        for point in points:
+            if point.x > x_max:
+                x_max = point.x
+            if point.x < x_min:
+                x_min = point.x
+            if point.y > y_max:
+                y_max = point.y
+            if point.y < y_min:
+                y_min = point.y
+        return Point(x_min, y_min), Point(x_max, y_max)
 
 def main():
     """

@@ -12,77 +12,7 @@ from Objects import Wall as wal
 from Error import Error
 import sys
 
-def data_path(file_name):
-        temp_path = sys.argv[0].split('/')
-        temp_path.pop()
-        temp_path.pop()
-        path = temp_path.pop(0)
-        for folder in temp_path:
-            path += '/' + folder
-        path += '/Data/' + file_name
-        return path
 
-def handle_objects_from_file(root):
-    objects = []
-    bool_obj = False
-    for child in root:
-        tag = child.tag.lower()
-        if tag == 'wall':
-            temp_w = wal.wall_from_file(child)
-            if temp_w[0]:
-                bool_obj = True
-                objects.append(temp_w[1])
-            else:
-                return temp_w
-    if bool_obj:
-        return True, objects
-    return False, None
-
-
-def environment_from_file(file_name='environment.xml'):
-    tree = ET.parse(data_path(file_name))
-    root = tree.getroot()
-    height = (False, None)
-    width = (False, None)
-    robot = (False, None)
-    objects = (False, None)
-    for child in root:
-        print(child.tag)
-        tag = child.tag.lower()
-        if tag == 'height':
-            try:
-                height = (True, int(child.text))
-            except ValueError:
-                print(Error.error.get('e_1h'))
-                return False, [Error.error.get('e_1h')]
-        elif tag == 'width':
-            try:
-                width = (True, int(child.text))
-            except ValueError:
-                print(Error.error.get('e_1w'))
-                return False, [Error.error.get('e_1w')]
-        elif tag == 'robot':
-            temp_r = rob.robot_from_file(child)
-            if temp_r[0]:
-                robot = (True, temp_r[1])
-            else:
-                print(temp_r)
-                return temp_r
-        elif tag == 'objects':
-            objects = handle_objects_from_file(child)
-    if height[0] and width[0] and robot[0]:
-        env = Environment(robot[1], height[1], width[1])
-        if objects[0]:
-            env.add_object_list(objects[1])
-        return env
-    er = []
-    if not height[0]:
-        er.append(Error.error.get('e_0h'))
-    if not width[0]:
-        er.append(Error.error.get('e_0w'))
-    if not robot[0]:
-        er.append(Error.error.get('e_0r'))
-    return False, er
 
 class Environment:
 
@@ -158,12 +88,86 @@ class Environment:
             txt += ob.convert_obj_to_txt()
         txt += '</Objects>'
         txt += '</Environment>'
-        with open(data_path(file_name), 'w') as file_handle:
+        with open(Environment.data_path(file_name), 'w') as file_handle:
             file_handle.write(txt)
 
     def __str__(self):
         return "The Environment is: \nRobot is: {}\n" \
                "Objects are - {}".format(self.robot, self.objects)
+
+    @staticmethod
+    def environment_from_file(file_name='environment.xml'):
+        tree = ET.parse(Environment.data_path(file_name))
+        root = tree.getroot()
+        height = (False, None)
+        width = (False, None)
+        robot = (False, None)
+        objects = (False, None)
+        for child in root:
+            print(child.tag)
+            tag = child.tag.lower()
+            if tag == 'height':
+                try:
+                    height = (True, int(child.text))
+                except ValueError:
+                    print(Error.error.get('e_1h'))
+                    return False, [Error.error.get('e_1h')]
+            elif tag == 'width':
+                try:
+                    width = (True, int(child.text))
+                except ValueError:
+                    print(Error.error.get('e_1w'))
+                    return False, [Error.error.get('e_1w')]
+            elif tag == 'robot':
+                temp_r = Robot.robot_from_file(child)
+                if temp_r[0]:
+                    robot = (True, temp_r[1])
+                else:
+                    print(temp_r)
+                    return temp_r
+            elif tag == 'objects':
+                objects = Environment.handle_objects_from_file(child)
+        if height[0] and width[0] and robot[0]:
+            env = Environment(robot[1], height[1], width[1])
+            if objects[0]:
+                env.add_object_list(objects[1])
+            return env
+        er = []
+        if not height[0]:
+            er.append(Error.error.get('e_0h'))
+        if not width[0]:
+            er.append(Error.error.get('e_0w'))
+        if not robot[0]:
+            er.append(Error.error.get('e_0r'))
+        return False, er
+
+    @staticmethod
+    def data_path(file_name):
+        temp_path = sys.argv[0].split('/')
+        temp_path.pop()
+        temp_path.pop()
+        path = temp_path.pop(0)
+        for folder in temp_path:
+            path += '/' + folder
+        path += '/Data/' + file_name
+        return path
+
+    @staticmethod
+    def handle_objects_from_file(root):
+        objects = []
+        bool_obj = False
+        for child in root:
+            tag = child.tag.lower()
+            if tag == 'wall':
+                temp_w = Wall.wall_from_file(child)
+                if temp_w[0]:
+                    bool_obj = True
+                    objects.append(temp_w[1])
+                else:
+                    return temp_w
+        if bool_obj:
+            return True, objects
+        return False, None
 
 def main():
     """

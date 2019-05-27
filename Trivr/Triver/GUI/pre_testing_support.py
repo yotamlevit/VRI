@@ -6,7 +6,7 @@
 #    May 16, 2019 06:36:12 PM +0300  platform: Windows NT
 
 import sys
-from Objects import Environment
+from Objects.Environment import Environment
 from GUI import Simulator, Open_window_vri
 try:
     import Tkinter as tk
