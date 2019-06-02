@@ -1,10 +1,47 @@
 # -*- coding: utf-8 -*-
 import math
+from Error import Error
+
+def point_from_file(root):
+    x = (False, None)
+    y = (False, None)
+    for child in root:
+        #print(child.tag)
+        tag = child.tag.lower()
+        if tag == 'x':
+            try:
+                x = (True, float(child.text))
+            except ValueError:
+                print(Error.error.get('p_1x'))
+                return False, [Error.error.get('p_1x')]
+        elif tag == 'y':
+            try:
+                y = (True, float(child.text))
+            except ValueError:
+                print(Error.error.get('p_1y'))
+                return False, [Error.error.get('p_1y')]
+    if x[0] and y[0]:
+        return True, Point(x[1], y[1])
+    elif not x[0] and not y[0]:
+        return False, [Error.error.get('p_0x'), Error.error.get('p_0y')]
+    elif not x[0]:
+        return False, [Error.error.get('p_0x')]
+    else:
+        return False, [Error.error.get('p_0y')]
+
 
 def slope(dx, dy):
+    """
+    calculates the slope between two points with their dx and dy
+     dx: the difference between the x values of the points
+     dy: he difference between the y values of the points
+    """
     return (float(dy) / float(dx)) if dx else None
 
 def quadratic_equation(a, b, c):
+    """
+
+    """
     d = (b**2) - (4*a*c)
     return (-b - d ** 0.5) / (a * 2), (-b + d ** 0.5) / (a * 2) if d >= 0 else (None, None)
 
@@ -20,39 +57,19 @@ class Point:
     def __repr__(self):
         return 'Point({}, {})'.format(self.x, self.y)
 
+    def get_point(self):
+        return self.x, self.y
+
+
     def halfway(self, target):
         midx = (self.x + target.x) / 2
         midy = (self.y + target.y) / 2
         return Point(midx, midy)
 
-    def distance(self, find_point, target=None, vector=None, distance=None):
-        if not find_point:
-            dx = target.x - self.x
-            dy = target.y - self.y
-            return (dx * dx + dy * dy) ** 0.5
-        else:
-            print "Error"
-            """
-            if 90 != vector.angle and vector.angle and 180 and vector.angle != 270 and vector.angle != 0:
-                tag = math.tan(vector.angle * math.pi/180)
-                a = 1 + tag
-                b = (-2 * vector.point.y * tag) - (2 * vector.point.x)
-                c = (vector.point.x ** 2) + (vector.point.y ** 2) - distance
-                solution = quadratic_equation(a, b, c)
-                print solution
-                if not all(solution):
-                    if 0 < vector.angle < 90 or 270 < vector.angle <= 359:
-                        for s in solution:
-                            if s > vector.x:
-                                solve = s
-                    elif 90 < vector.angle < 270:
-                        for s in solution:
-                            if s < vector.x:
-                                solve = s
-            else:
-                return
-            """
-
+    def distance(self, target):
+        dx = target.x - self.x
+        dy = target.y - self.y
+        return (dx * dx + dy * dy) ** 0.5
 
 
     def reflect_x(self):
@@ -70,37 +87,58 @@ class Point:
     def slope(self, target):
         return slope(target.x - self.x, target.y - self.y)
 
+    def slope_deg(self, target):
+        tag = self.slope(target)
+        if tag is None:
+            if target.y < self.y:
+                return 90
+            else:
+                return 270
+        deg = math.degrees(math.atan(tag))
+        #print('t    ' + str(tag))
+        #print('d    ' + str(deg))
+        return deg
+
     def y_int(self, target):       # <= here's the magic
-        return self.y - self.slope(target)*self.x
+        return self.y - self.slope(target)*self.x if self.slope(target) is not None else None
 
     def line_equation(self, target):
         slope = self.slope(target)
         y_int = self.y_int(target)
-        if y_int < 0:
+        if slope is None and y_int is None:
+            return 'x = {}'.format(self.x)
+        elif y_int < 0:
             y_int = -y_int
             sign = '-'
         else:
             sign = '+'
-
         return 'y = {}x {} {}'.format(slope, sign, y_int)
+
 
     def line_function(self, target):
         slope = self.slope(target)
         y_int = self.y_int(target)
         def fn(x):
-            return slope*x + y_int
+            return slope*float(x) + y_int
         return fn
 
+    def convert_point_to_txt(self):
+        return '<Point><x>' + str(self.x) + '</x><y>' + str(self.y) + '</y></Point>'
 def main():
     """
     Add Documentation here
     """
-    print quadratic_equation(1,-4,4)
+    print(Point(450.0, 600.0).slope(Point(450, 700)))
+    print(Point(450.0, 600.0).slope_deg(Point(450, 700)))
+    print (Point(0,2).slope_deg(Point(1,1)))
+
+    print (quadratic_equation(1,-4,4))
     p = Point(100, 100)
     p2 = Point(300,200)
-    print p.__str__()
+    print (p.__str__())
+    print(p.line_equation(p2))
     a = p.line_function(p2)
-    print a(300)
+    print (a(300))
 
 if __name__ == '__main__':
     main()

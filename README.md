@@ -1,2 +1,1 @@
-# Trivr
-Test Robot in virtual reality
+# Triver
