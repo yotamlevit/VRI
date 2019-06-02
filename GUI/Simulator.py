@@ -87,8 +87,6 @@ class Simulator:
         self.env = env
         self.lap = 0
 
-        self.wall_img = tk.PhotoImage(file="wall_photo.png")
-
         self.menubar = tk.Menu(top, font=('Segoe UI', 9, ), bg=_bgcolor
                 ,fg=_fgcolor)
         top.configure(menu = self.menubar)
@@ -261,9 +259,6 @@ class Simulator:
             self.env.move_robot(action)
         self.canvas_sim.delete("all")
         for key, value in self.env.objects.items():
-            if type(value) is 'Wall':
-                img = self.wall_img
-            elif type(value) is 'Robot'
             value.draw(self.canvas_sim, 'green')
         self.lap += 1
         self.env.robot.draw(self.canvas_sim, 'black')

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-__all__ = ['Open_window_vri', 'Open_window_vri_support', 'pre_testing', 'pre_testing_support', 'Simulator', 'Simulator_support']
+__all__ = ['Open_window_vri', 'Open_window_vri_support', 'pre_testing', 'pre_testing_support', 'Simulator', 'Simulator_support', 'Designer', 'Designer_support']
 
 def main():
     """
