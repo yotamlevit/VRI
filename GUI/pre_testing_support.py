@@ -21,13 +21,13 @@ except ImportError:
     py3 = True
 
 
-def continue_pressed(env_file, action_file):
+def continue_pressed(env_file, file_logic, path_log):
     destroy_window()
     print('Reading Data')
     env = Environment.environment_from_file(env_file)
     print('Data read')
     print('Start testing')
-    Simulator.vp_start_gui(env)
+    Simulator.vp_start_gui(env, file_logic, path_log)
 
 
 def back_pressed():

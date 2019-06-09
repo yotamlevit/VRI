@@ -6,6 +6,8 @@
 #    May 17, 2019 02:52:22 PM +0300  platform: Windows NT
 
 from GUI import Open_window_vri
+import importlib.util
+import sys
 try:
     import Tkinter as tk
 except ImportError:
@@ -22,8 +24,13 @@ def set_Tk_var():
     global speed_value
     speed_value = tk.DoubleVar()
 
-def init(top, gui, *args, **kwargs):
+def init(top, gui, logic_file , path_log , *args, **kwargs):
     global w, top_level, root
+    global spec
+    spec = importlib.util.spec_from_file_location(logic_file, path_log)
+    global logic
+    logic = importlib.util.module_from_spec(spec)
+
     w = gui
     top_level = top
     root = top
@@ -40,15 +47,9 @@ def exit():
     Open_window_vri.vp_start_gui()
 
 def move(lap):
-    if lap < 160:
-        return 's'
-    elif 160 < lap <= 250:
-        return 'd'
-    #if 180 <= lap <2000:
-     #   return 'w'
-    #if 200 <= lap < 3000:
-     #   return 's'
-    return None
+    spec.loader.exec_module(logic)
+    return logic.logic(lap)
+    #return sys.path[len(sys.path)-1].logic(lap)
 
 if __name__ == '__main__':
     from GUI import Simulator

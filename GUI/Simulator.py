@@ -33,13 +33,13 @@ def data_path(file_name):
     path += '/Data/' + file_name
     return path
 
-def vp_start_gui(env):
+def vp_start_gui(env, logic_file, path_log):
     '''Starting point when module is the main routine.'''
     global val, w, root
     root = tk.Tk()
     Simulator_support.set_Tk_var()
     top = Simulator (env, root)
-    Simulator_support.init(root, top)
+    Simulator_support.init(root, top, logic_file , path_log)
     root.mainloop()
 
 w = None

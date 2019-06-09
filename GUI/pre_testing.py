@@ -167,10 +167,12 @@ class Get_Sim_Data:
         path = temp_path.pop(0)
         for folder in temp_path:
             path += '/' + folder
-        path += '/Data/' + env_file
-        print(path)
-        if os.path.isfile(path):
-            pre_testing_support.continue_pressed(env_file, action_file)
+        path_env = path + '/Data/' + env_file
+        path_log = path + '/Data/' + action_file
+        print(path_env)
+        print(path_log)
+        if os.path.isfile(path_env) and os.path.isfile(path_log):
+            pre_testing_support.continue_pressed(env_file, action_file,path_log)
         else:
             self.error.configure(text=Error.error.get('gd_cfef'))
 
