@@ -35,7 +35,9 @@ class Environment:
         #print("2")
         for obj in self.objects:
             #if self.robot.hit_box.is_Colliding(self.objects[obj].hit_box):
-                #print("1")
+            #    print("1")
+            #print(self.objects[obj].shape.get_equation())
+            #print(self.robot.shape.get_point_value())
             if self.robot.shape.is_Colliding(self.objects[obj].shape):
                 return True
         return False

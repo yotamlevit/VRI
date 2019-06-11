@@ -7,6 +7,7 @@
 
 import sys
 from GUI import pre_testing
+from GUI import Designer
 
 try:
     import Tkinter as tk
@@ -25,6 +26,11 @@ def start_test(root):
     destroy_window()
     print('Opening Get Data Screen')
     pre_testing.vp_start_gui()
+
+def designer(root):
+    destroy_window()
+    print('Opening Designer Window')
+    Designer.vp_start_gui()
 
 def xxx(root):
     print('Open_window_vri_support.xxx')

@@ -57,6 +57,27 @@ class StraightLine:
             self.min_y = self.start_point.y
             self.max_y = self.end_point.y
 
+    def update_line(self, point, vector):
+        self.start_point = point
+        self.vector = vector
+        self.end_point = self.vector.get_end_point(self.start_point)
+        self.b = self.start_point.y_int(self.end_point)
+        self.fc = self.start_point.line_function(self.end_point)
+        #if self.b is not None:
+        self.equ = self.start_point.line_equation(self.end_point)
+        self.m = self.start_point.slope(self.end_point)
+        if self.start_point.x > self.end_point.x:
+            self.min_x = self.end_point.x
+            self.max_x = self.start_point.x
+        else:
+            self.min_x = self.start_point.x
+            self.max_x = self.end_point.x
+        if self.start_point.y > self.end_point.y:
+            self.min_y = self.end_point.y
+            self.max_y = self.start_point.y
+        else:
+            self.min_y = self.start_point.y
+            self.max_y = self.end_point.y
 
     def __str__(self):
         return '(Vector: {}, Start Point: {}, End Point: {}, Vector Function: {})'.format(self.vector, self.start_point, self.end_point, self.equ)
@@ -127,11 +148,6 @@ class StraightLine:
     def move_to_new_point_by_units(self, units):
         dis_to_add = self.vector.skalar_mul_direction(units)
         point_val = self.start_point.get_point()
-        #if -0.5 < point_val[0] + dis_to_add[0] < 0.5:
-        #    self.change_pos(Point(0, point_val[1] + dis_to_add[1]))
-        #elif -0.5 < point_val[1] + dis_to_add[1] < 0.5:
-         #   self.change_pos(Point(point_val[0] + dis_to_add[0], 0))
-        #else:
         self.change_pos(Point(point_val[0] + dis_to_add[0], point_val[1] + dis_to_add[1]))
 
     def is_Colliding(self, target):
@@ -142,12 +158,18 @@ class StraightLine:
                 return False, 0
             else:
                 answer = db/dm
-                if self.min_x <= answer <= self.max_x and target.min_x <= answer <= target.max_x :
+                if self.min_x <= answer <= self.max_x and target.min_x <= answer <= target.max_x:
                     return True, db/dm
                 return False, answer
         elif self.m is None and target.m is None:
-            if self.min_x == target.min_x:
-                return True, self.min_x
+            #if self.min_y < target.min_y < self.max_y or self.min_y < target.max_y < self.max_y\
+            #       or target.min_y < self.min_y < target.max_y or target.min_y < self.max_y < target.max_y:
+             #   print(self.min_y)
+            #    print(target.min_y)
+             #   print(self.equ)
+             #   print(target.equ)
+             #   print('1')
+             #   return True, self.min_x
             return False, None
         elif self.m is None:
             if target.min_x <= self.min_x <= target.max_x and self.min_y < target.fc(self.min_x) < self.max_y:
@@ -164,9 +186,11 @@ def main():
     """
     Add Documentation here
     """
-    s1 = StraightLine(Point(0,0), Vector(1000,90))
-    s1.change_angle(130)
-    s2 = StraightLine(Point(750,200), Vector(250,0))
+    s1 = StraightLine(Point(0,490), Vector(1000,0))
+    print(s1.equ)
+    #s1.change_angle(130)
+    s2 = StraightLine(Point(0,0), Vector(10,90))
+    print(s2.equ)
     print(s1.is_Colliding(s2))
 
 

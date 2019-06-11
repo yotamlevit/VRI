@@ -17,12 +17,35 @@ class Parallelogram(object):
         self.relative_line = StraightLine(self.main_line.end_point, Vector(length, 180-(angle-self.main_line.vector.angle)))
         self.main_line_2 = StraightLine(self.relative_line.end_point, Vector(self.main_line.vector.length, 180+self.main_line.vector.angle))
         self.relative_line_2 = StraightLine(self.main_line_2.end_point, Vector(self.relative_line.vector.length, 180 + self.relative_line.vector.angle))
+        self.pos = self.get_points()
+        self.pos.append(self.main_line.start_point.halfway(self.main_line.end_point))
+        self.pos.append(self.relative_line.start_point.halfway(self.relative_line.end_point))
+        self.pos.append(self.main_line_2.start_point.halfway(self.main_line_2.end_point))
+        self.pos.append(self.relative_line_2.start_point.halfway(self.relative_line_2.end_point))
 
     def __str__(self):
         return 'Parallelogram: \nLine: {} ,\nRelative Line: {},\nLine Two: {} ,\nRelative Two: {} \n)'.format(self.main_line, self.relative_line, self.main_line_2, self.relative_line_2)
 
     def __repr__(self):
         return 'Line: {}, Relative Line: {})'.format(self.main_line, self.relative_line)
+
+    def get_ultrasonic_angle(self, pos):
+        if pos == 0:
+            return self.relative_line_2.vector.angle + 315
+        if pos == 1:
+            return self.main_line.vector.angle + 315
+        if pos == 2:
+            return self.relative_line.vector.angle + 315
+        if pos == 3:
+            return self.main_line_2.vector.angle + 315
+        if pos == 4:
+            return self.main_line.vector.angle - 90
+        if pos == 5:
+            return self.relative_line.vector.angle - 90
+        if pos == 6:
+            return self.main_line_2.vector.angle - 90
+        if pos == 7:
+            return self.relative_line_2.vector.angle - 90
 
     def get_lines(self):
         return [self.main_line, self.main_line_2, self.relative_line, self.relative_line_2]
@@ -31,12 +54,22 @@ class Parallelogram(object):
         self.relative_line.change_angle(180-angle)
         self.main_line_2.change_pos(self.relative_line.end_point)
         self.relative_line_2.change_angle(180-self.relative_line.vector.angle)
+        self.pos = self.get_points()
+        self.pos.append(self.main_line.start_point.halfway(self.main_line.end_point))
+        self.pos.append(self.relative_line.start_point.halfway(self.relative_line.end_point))
+        self.pos.append(self.main_line_2.start_point.halfway(self.main_line_2.end_point))
+        self.pos.append(self.relative_line_2.start_point.halfway(self.relative_line_2.end_point))
 
     def move_by_units(self, units):
         self.main_line.move_to_new_point_by_units(units)
         self.relative_line = StraightLine(self.main_line.end_point, Vector(self.relative_line.vector.length, 180-(self.relative_angle-self.main_line.vector.angle)))
         self.main_line_2 = StraightLine(self.relative_line.end_point, Vector(self.main_line.vector.length, 180+self.main_line.vector.angle))
         self.relative_line_2 = StraightLine(self.main_line_2.end_point, Vector(self.relative_line.vector.length, 180 + self.relative_line.vector.angle))
+        self.pos = self.get_points()
+        self.pos.append(self.main_line.start_point.halfway(self.main_line.end_point))
+        self.pos.append(self.relative_line.start_point.halfway(self.relative_line.end_point))
+        self.pos.append(self.main_line_2.start_point.halfway(self.main_line_2.end_point))
+        self.pos.append(self.relative_line_2.start_point.halfway(self.relative_line_2.end_point))
 
     def get_middle_point(self):
         return self.main_line.start_point.halfway(self.main_line.end_point).halfway(self.main_line_2.start_point.halfway(self.main_line_2.end_point))
@@ -49,6 +82,11 @@ class Parallelogram(object):
         self.relative_line = StraightLine(self.main_line.end_point, Vector(self.relative_line.vector.length, 180-(self.relative_angle-self.main_line.vector.angle)))
         self.main_line_2 = StraightLine(self.relative_line.end_point, Vector(self.main_line.vector.length, 180+self.main_line.vector.angle))
         self.relative_line_2 = StraightLine(self.main_line_2.end_point, Vector(self.relative_line.vector.length, 180 + self.relative_line.vector.angle))
+        self.pos = self.get_points()
+        self.pos.append(self.main_line.start_point.halfway(self.main_line.end_point))
+        self.pos.append(self.relative_line.start_point.halfway(self.relative_line.end_point))
+        self.pos.append(self.main_line_2.start_point.halfway(self.main_line_2.end_point))
+        self.pos.append(self.relative_line_2.start_point.halfway(self.relative_line_2.end_point))
 
     def change_rotation(self, angle, center_line):
         """
@@ -70,6 +108,11 @@ class Parallelogram(object):
         self.relative_line = StraightLine(self.main_line.end_point, Vector(self.relative_line.vector.length, 180-(self.relative_angle-self.main_line.vector.angle)))
         self.main_line_2 = StraightLine(self.relative_line.end_point, Vector(self.main_line.vector.length, 180+self.main_line.vector.angle))
         self.relative_line_2 = StraightLine(self.main_line_2.end_point, Vector(self.relative_line.vector.length, 180 + self.relative_line.vector.angle))
+        self.pos = self.get_points()
+        self.pos.append(self.main_line.start_point.halfway(self.main_line.end_point))
+        self.pos.append(self.relative_line.start_point.halfway(self.relative_line.end_point))
+        self.pos.append(self.main_line_2.start_point.halfway(self.main_line_2.end_point))
+        self.pos.append(self.relative_line_2.start_point.halfway(self.relative_line_2.end_point))
 
     def change_size(self, side1, side2):
         """
@@ -79,6 +122,11 @@ class Parallelogram(object):
         self.relative_line.change_length(side2)
         self.main_line_2 = StraightLine(self.relative_line.end_point, Vector(self.main_line.vector.length, 180+self.main_line.vector.angle))
         self.relative_line_2 = StraightLine(self.main_line_2.end_point, Vector(self.relative_line.vector.length, 180 + self.relative_line.vector.angle))
+        self.pos = self.get_points()
+        self.pos.append(self.main_line.start_point.halfway(self.main_line.end_point))
+        self.pos.append(self.relative_line.start_point.halfway(self.relative_line.end_point))
+        self.pos.append(self.main_line_2.start_point.halfway(self.main_line_2.end_point))
+        self.pos.append(self.relative_line_2.start_point.halfway(self.relative_line_2.end_point))
 
     def get_points(self):
         """
@@ -138,6 +186,8 @@ class Parallelogram(object):
         for line in lines:
             for target in targets:
                 if line.is_Colliding(target)[0]:
+                    #print(line.equ)
+                    #print(target.equ)
                     return True
         return False
 
@@ -181,10 +231,11 @@ def main():
     """
     Add Documentation here
     """
-    v = Vector(5, 90)
-    p = Point(200, 200)
+    v = Vector(20, 180)
+    p = Point(490, 495)
     line = StraightLine(p, v)
-    p = Parallelogram(line, 90, 5)
+    p = Parallelogram(line, 90, 10)
+    print(p.get_middle_point())
     print(p.get_equation())
     s2 = StraightLine(Point(199,0), Vector(1000,90))
     print(s2)

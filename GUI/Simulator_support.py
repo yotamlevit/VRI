@@ -46,9 +46,9 @@ def exit():
     print('opening Open Screen')
     Open_window_vri.vp_start_gui()
 
-def move(lap):
+def move(lap, robot):
     spec.loader.exec_module(logic)
-    return logic.logic(lap)
+    return logic.logic(lap, robot)
     #return sys.path[len(sys.path)-1].logic(lap)
 
 if __name__ == '__main__':

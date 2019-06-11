@@ -43,6 +43,8 @@ class Vector:
         self.length = length
         if angle >= 360:
             angle -= 360
+        if angle < 0:
+            angle += 360
         self.angle = angle
         if self.angle == 90 or self.angle == 270:
             temp = (0,math.sin(math.radians(self.angle))*self.length)
@@ -103,9 +105,9 @@ def main():
     """
     Add Documentation here
     """
-    v = Vector(4, 90)
+    v = Vector(4, -90)
     print(v.algebraic_vector)
-    v.change_angle(91)
+    #v.change_angle(91)
     print (v.__str__())
 
 if __name__ == '__main__':

@@ -230,6 +230,9 @@ class Simulator:
         for key, value in self.env.objects.items():
             value.draw(self.canvas_sim, 'green')
         self.env.robot.draw(self.canvas_sim, 'black')
+        for senc in self.env.robot.ultrasonic:
+            if senc is not None:
+                senc.draw(self.canvas_sim)
 
 
     def start(self):
@@ -248,20 +251,26 @@ class Simulator:
 
     def draw(self):
         #print(self.env.robot.shape)
-        print(self.env.robot.hit_box)
+        #print(self.env.robot.hit_box)
         #print(self.spped_scale.get())
         if self.env.check_crash():
             print ("crash")
             self.crashed()
             self.bool_after = False
+        for sen in self.env.robot.ultrasonic:
+            if sen is not None:
+                sen.update_distance(self.env.objects, self.env.boundaries)
         if self.bool_after:
-            action = Simulator_support.move(self.lap)
+            action = Simulator_support.move(self.lap, self.env.robot)
             self.env.move_robot(action)
         self.canvas_sim.delete("all")
         for key, value in self.env.objects.items():
             value.draw(self.canvas_sim, 'green')
         self.lap += 1
         self.env.robot.draw(self.canvas_sim, 'black')
+        for sen in self.env.robot.ultrasonic:
+            if sen is not None:
+                sen.draw(self.canvas_sim)
         if self.bool_after:
             self.top.after(int(self.spped_scale.get()),self.draw)
 

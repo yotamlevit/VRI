@@ -132,7 +132,7 @@ tutorial adn examples''')
         self.designer_b.configure(highlightcolor="black")
         self.designer_b.configure(pady="0")
         self.designer_b.configure(text='''Designer''')
-        self.designer_b.bind('<Button-1>',lambda e:Open_window_vri_support.xxx(e))
+        self.designer_b.bind('<Button-1>',lambda e:Open_window_vri_support.designer(top))
 
         self.about_b = tk.Button(top)
         self.about_b.place(relx=0.559, rely=0.792, height=64, width=264)

@@ -19,7 +19,9 @@ class Error(object):
                  'e_1h' : 'Env err: invalid height', 'e_1w' : 'Env err: invalid width',
                  'w_0s' : 'Wall err: missing shape', 'e_0h' : 'Env err: missing height',
                  'e_0w': 'Env err: missing width', 'e_0r' : 'Env err: missing robot',
-                 'gd_cfef' : 'Environment: cannot found file'}
+                 'gd_cfef' : 'Environment: cannot found file', 'us_1pos' : 'US err: invalid pos',
+                 'us_1a': 'US err: invalid angle', 'us_0pos' : 'US err: missing pos',
+                 'us_0a' : 'US err: missing angle', 'us_0point' : 'US err: missing point'}
 
 
 def main():
