@@ -26,7 +26,7 @@
       <file leaf-file-name="Simulator_support.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GUI/Simulator_support.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="14" selection-start="809" selection-end="809" vertical-scroll-proportion="0.0" vertical-offset="492" max-vertical-offset="1105">
+            <state line="33" column="14" selection-start="809" selection-end="809" vertical-scroll-proportion="0.0" vertical-offset="543" max-vertical-offset="1105">
               <folding />
             </state>
           </provider>
@@ -35,7 +35,7 @@
       <file leaf-file-name="Environment.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Objects/Environment.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="76" selection-start="2683" selection-end="2683" vertical-scroll-proportion="0.0" vertical-offset="1054" max-vertical-offset="3400">
+            <state line="84" column="76" selection-start="2683" selection-end="2683" vertical-scroll-proportion="0.0" vertical-offset="1428" max-vertical-offset="3400">
               <folding />
             </state>
           </provider>
@@ -44,7 +44,7 @@
       <file leaf-file-name="Robot.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Objects/Robot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="18" selection-start="2646" selection-end="2646" vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="2686">
+            <state line="63" column="18" selection-start="2646" selection-end="2646" vertical-scroll-proportion="0.0" vertical-offset="1071" max-vertical-offset="2822">
               <folding />
             </state>
           </provider>
@@ -53,7 +53,7 @@
       <file leaf-file-name="logic.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Data/logic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="18" selection-start="611" selection-end="817" vertical-scroll-proportion="0.0" vertical-offset="138" max-vertical-offset="1960">
+            <state line="32" column="18" selection-start="611" selection-end="817" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="1666">
               <folding />
             </state>
           </provider>
@@ -62,7 +62,7 @@
       <file leaf-file-name="About_The_Program.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GUI/About_The_Program.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="16" selection-start="429" selection-end="441" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1853">
+            <state line="23" column="16" selection-start="429" selection-end="441" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="1853">
               <folding />
             </state>
           </provider>
@@ -71,48 +71,49 @@
       <file leaf-file-name="About_The_Program_support.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GUI/About_The_Program_support.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="32" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="867">
+            <state line="23" column="32" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="867">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="XML.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/GUI/XML.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="108" column="60" selection-start="4029" selection-end="4029" vertical-scroll-proportion="0.15302491" vertical-offset="1750" max-vertical-offset="2431">
               <folding>
-                <element signature="e#196#206#0" expanded="true" />
+                <element signature="e#192#202#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Point.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/analytic_geometry/Point.py">
+      <file leaf-file-name="pre_testing.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GUI/pre_testing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="122" column="0" selection-start="3301" selection-end="3301" vertical-scroll-proportion="-6.8461537" vertical-offset="1879" max-vertical-offset="2601">
+            <state line="169" column="45" selection-start="7003" selection-end="7229" vertical-scroll-proportion="0.0" vertical-offset="2698" max-vertical-offset="3400">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Open_window_vri_support.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/GUI/Open_window_vri_support.py">
+      <file leaf-file-name="test.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="0" selection-start="577" selection-end="690" vertical-scroll-proportion="0.87188613" vertical-offset="71" max-vertical-offset="1156">
+            <state line="9" column="0" selection-start="209" selection-end="288" vertical-scroll-proportion="0.0" vertical-offset="63" max-vertical-offset="1088">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="XML_support.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GUI/XML_support.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="33" selection-start="513" selection-end="513" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
               <folding>
                 <element signature="e#196#206#0" expanded="true" />
+                <marker date="1560424531522" expanded="true" signature="428:514" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Wall.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Objects/Wall.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="environment.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Data/environment.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="139" column="27" selection-start="4168" selection-end="4747" vertical-scroll-proportion="-25.192308" vertical-offset="1708" max-vertical-offset="2652">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -127,8 +128,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/xml_example.xml" />
-        <option value="$PROJECT_DIR$/Open_window_vri.py" />
         <option value="$PROJECT_DIR$/temp_screen.py" />
         <option value="$PROJECT_DIR$/Robot.py" />
         <option value="$PROJECT_DIR$/temp.py" />
@@ -155,7 +154,6 @@
         <option value="$PROJECT_DIR$/Objects/Object_Builder.py" />
         <option value="$PROJECT_DIR$/Movement/Motor.py" />
         <option value="$PROJECT_DIR$/Objects/Wall.py" />
-        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/GUI/pre_testing_support.py" />
         <option value="$PROJECT_DIR$/TEST2.py" />
         <option value="$PROJECT_DIR$/GUI/Designer_support.py" />
@@ -176,8 +174,11 @@
         <option value="$PROJECT_DIR$/GUI/__init__.py" />
         <option value="$PROJECT_DIR$/GUI/About_The_Program.py" />
         <option value="$PROJECT_DIR$/GUI/About_The_Program_support.py" />
-        <option value="$PROJECT_DIR$/GUI/Open_window_vri.py" />
+        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/GUI/Open_window_vri_support.py" />
+        <option value="$PROJECT_DIR$/GUI/XML_support.py" />
+        <option value="$PROJECT_DIR$/GUI/Open_window_vri.py" />
+        <option value="$PROJECT_DIR$/GUI/XML.py" />
       </list>
     </option>
   </component>
@@ -213,6 +214,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -275,7 +277,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -299,7 +300,7 @@
       <recent name="C:\Users\cyber\Desktop\Trivr\Triver" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.About_The_Program">
+  <component name="RunManager" selected="Python.XML">
     <configuration default="false" name="Open_window_vri (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -317,42 +318,6 @@
       <RunnerSettings RunnerId="PyDebugRunner" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Vector" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:/Program Files/Python37/python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/analytic_geometry" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Triver" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analytic_geometry/Vector.py" />
-      <option name="PARAMETERS" value="" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="StraightLine" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:/Program Files/Python37/python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/analytic_geometry" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Triver" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analytic_geometry/StraightLine.py" />
-      <option name="PARAMETERS" value="" />
-      <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
@@ -387,6 +352,42 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Triver" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GUI/About_The_Program.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:/Program Files/Python37/python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Triver" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="XML" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:/Program Files/Python37/python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/GUI" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Triver" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GUI/XML.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
@@ -437,6 +438,22 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:/Program Files/Python37/python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Triver" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <method />
+    </configuration>
     <configuration default="true" type="docs" factoryName="Docutils task">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -452,22 +469,6 @@
       <option name="docutils_params" value="" />
       <option name="docutils_task" value="rst2html" />
       <option name="docutils_open_in_browser" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:/Program Files/Python37/python.exe" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Triver" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
       <method />
     </configuration>
     <configuration default="true" type="docs" factoryName="Sphinx task">
@@ -549,18 +550,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.Open_window_vri (1)" />
-      <item index="1" class="java.lang.String" itemvalue="Python.Vector" />
-      <item index="2" class="java.lang.String" itemvalue="Python.StraightLine" />
-      <item index="3" class="java.lang.String" itemvalue="Python.Parallelogram" />
-      <item index="4" class="java.lang.String" itemvalue="Python.About_The_Program" />
+      <item index="1" class="java.lang.String" itemvalue="Python.Parallelogram" />
+      <item index="2" class="java.lang.String" itemvalue="Python.About_The_Program" />
+      <item index="3" class="java.lang.String" itemvalue="Python.test" />
+      <item index="4" class="java.lang.String" itemvalue="Python.XML" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.About_The_Program" />
+        <item index="0" class="java.lang.String" itemvalue="Python.XML" />
         <item index="1" class="java.lang.String" itemvalue="Python.Open_window_vri (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Parallelogram" />
-        <item index="3" class="java.lang.String" itemvalue="Python.StraightLine" />
-        <item index="4" class="java.lang.String" itemvalue="Python.Vector" />
+        <item index="2" class="java.lang.String" itemvalue="Python.test" />
+        <item index="3" class="java.lang.String" itemvalue="Python.About_The_Program" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Parallelogram" />
       </list>
     </recent_temporary>
   </component>
@@ -597,7 +598,6 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40358272" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.178125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39936775" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -607,10 +607,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40358272" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -632,11 +633,23 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/GUI/Simulator.py">
+    <entry file="file://$PROJECT_DIR$/Objects/Wall.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="42" selection-start="2647" selection-end="2648" vertical-scroll-proportion="0.0" vertical-offset="1547" max-vertical-offset="5083">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/environment.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="139" column="27" selection-start="4168" selection-end="4747" vertical-scroll-proportion="0.0" vertical-offset="1708" max-vertical-offset="2652">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/Simulator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="42" selection-start="2647" selection-end="2648" vertical-scroll-proportion="0.0" vertical-offset="1547" max-vertical-offset="5083" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GUI/wall_photo.png">
@@ -646,16 +659,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Objects/Object_Builder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="8" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="884">
-          <folding />
-        </state>
+        <state line="10" column="8" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="884" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Shape/Parallelogram.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="25" selection-start="4879" selection-end="4879" vertical-scroll-proportion="0.0" vertical-offset="1394" max-vertical-offset="3502">
-          <folding />
-        </state>
+        <state line="82" column="25" selection-start="4879" selection-end="4879" vertical-scroll-proportion="0.0" vertical-offset="1394" max-vertical-offset="3502" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GUI/Open_window_vri.py">
@@ -674,9 +683,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GUI/Simulator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="265" column="38" selection-start="10306" selection-end="10306" vertical-scroll-proportion="0.0" vertical-offset="4143" max-vertical-offset="5083">
-          <folding />
-        </state>
+        <state line="265" column="38" selection-start="10306" selection-end="10306" vertical-scroll-proportion="0.0" vertical-offset="4143" max-vertical-offset="5083" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GUI/Open_window_vri.py">
@@ -742,16 +749,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GUI/Open_window_vri.tcl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3349">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3349" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Data/xml_example.xml">
@@ -763,81 +761,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Objects/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/analytic_geometry/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="43" selection-start="68" selection-end="68" vertical-scroll-proportion="0.0372807" vertical-offset="0" max-vertical-offset="912">
-          <folding />
-        </state>
+        <state line="2" column="43" selection-start="68" selection-end="68" vertical-scroll-proportion="0.0372807" vertical-offset="0" max-vertical-offset="912" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/analytic_geometry/Vector.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="7" selection-start="3874" selection-end="3874" vertical-scroll-proportion="0.72039473" vertical-offset="1077" max-vertical-offset="1989">
-          <folding />
-        </state>
+        <state line="104" column="7" selection-start="3874" selection-end="3874" vertical-scroll-proportion="0.72039473" vertical-offset="1077" max-vertical-offset="1989" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GUI/Designer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="141" column="0" selection-start="5573" selection-end="5573" vertical-scroll-proportion="0.0" vertical-offset="1689" max-vertical-offset="2635">
-          <folding />
-        </state>
+        <state line="141" column="0" selection-start="5573" selection-end="5573" vertical-scroll-proportion="0.0" vertical-offset="1689" max-vertical-offset="2635" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GUI/Designer_support.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="19" selection-start="613" selection-end="613" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
-          <folding />
-        </state>
+        <state line="32" column="19" selection-start="613" selection-end="613" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GUI/pre_testing_support.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="20" selection-start="698" selection-end="698" vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="1037">
-          <folding />
-        </state>
+        <state line="29" column="20" selection-start="698" selection-end="698" vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="1037" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Error.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="89" selection-start="1532" selection-end="1532" vertical-scroll-proportion="0.5142349" vertical-offset="0" max-vertical-offset="680">
-          <folding />
-        </state>
+        <state line="17" column="89" selection-start="1532" selection-end="1532" vertical-scroll-proportion="0.5142349" vertical-offset="0" max-vertical-offset="680" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Objects/Object_Builder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="8" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0" vertical-offset="52" max-vertical-offset="850">
-          <folding />
-        </state>
+        <state line="10" column="8" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0" vertical-offset="52" max-vertical-offset="850" />
       </provider>
     </entry>
     <entry file="file://C:/Program Files/Python37/Lib/tkinter/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1704" column="0" selection-start="66147" selection-end="66147" vertical-scroll-proportion="0.33274022" vertical-offset="28730" max-vertical-offset="68187">
-          <folding />
-        </state>
+        <state line="1704" column="0" selection-start="66147" selection-end="66147" vertical-scroll-proportion="0.33274022" vertical-offset="28730" max-vertical-offset="68187" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Objects/Ultrasonic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="0" selection-start="1467" selection-end="1467" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1598">
-          <folding>
-            <element signature="e#25#80#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="41" column="0" selection-start="1467" selection-end="1467" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1598" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/analytic_geometry/StraightLine.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="180" column="30" selection-start="6994" selection-end="7462" vertical-scroll-proportion="0.0" vertical-offset="2515" max-vertical-offset="3383">
-          <folding />
-        </state>
+        <state line="180" column="30" selection-start="6994" selection-end="7462" vertical-scroll-proportion="0.0" vertical-offset="2515" max-vertical-offset="3383" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Objects/Wall.py">
@@ -847,51 +821,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GUI/Simulator_support.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="14" selection-start="809" selection-end="809" vertical-scroll-proportion="0.0" vertical-offset="169" max-vertical-offset="1105">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GUI/Simulator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="286" column="0" selection-start="11186" selection-end="11186" vertical-scroll-proportion="0.0" vertical-offset="4555" max-vertical-offset="5117">
-          <folding />
-        </state>
+        <state line="286" column="0" selection-start="11186" selection-end="11186" vertical-scroll-proportion="0.0" vertical-offset="4555" max-vertical-offset="5117" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Shape/Parallelogram.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="240" column="13" selection-start="11595" selection-end="11595" vertical-scroll-proportion="-52.153847" vertical-offset="2639" max-vertical-offset="4284">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Objects/Environment.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="76" selection-start="2683" selection-end="2683" vertical-scroll-proportion="0.0" vertical-offset="1054" max-vertical-offset="3400">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Objects/Robot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="18" selection-start="2646" selection-end="2646" vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="2686">
-          <folding />
-        </state>
+        <state line="240" column="13" selection-start="11595" selection-end="11595" vertical-scroll-proportion="-52.153847" vertical-offset="2639" max-vertical-offset="4284" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Data/environment.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="139" column="27" selection-start="4168" selection-end="4747" vertical-scroll-proportion="-25.192308" vertical-offset="1708" max-vertical-offset="2652">
+        <state line="139" column="27" selection-start="4168" selection-end="4747" vertical-scroll-proportion="0.0" vertical-offset="1708" max-vertical-offset="2652">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/analytic_geometry/Point.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="0" selection-start="3301" selection-end="3301" vertical-scroll-proportion="-6.8461537" vertical-offset="1879" max-vertical-offset="2601">
+        <state line="122" column="0" selection-start="3301" selection-end="3301" vertical-scroll-proportion="0.0" vertical-offset="2074" max-vertical-offset="2618">
           <folding />
         </state>
       </provider>
@@ -899,13 +848,6 @@
     <entry file="file://$PROJECT_DIR$/Data/logic.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="18" selection-start="611" selection-end="817" vertical-scroll-proportion="0.0" vertical-offset="138" max-vertical-offset="1960">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GUI/pre_testing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="27" selection-start="984" selection-end="984" vertical-scroll-proportion="0.0" vertical-offset="658" max-vertical-offset="3400">
           <folding />
         </state>
       </provider>
@@ -927,24 +869,76 @@
     <entry file="file://$PROJECT_DIR$/GUI/About_The_Program_support.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="32" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="867">
-          <folding>
-            <element signature="e#196#206#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GUI/Open_window_vri.py">
+    <entry file="file://$PROJECT_DIR$/Objects/Robot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="148" column="78" selection-start="6433" selection-end="6433" vertical-scroll-proportion="0.54626334" vertical-offset="2209" max-vertical-offset="2771">
+        <state line="63" column="18" selection-start="2646" selection-end="2646" vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="2686">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/Simulator_support.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="14" selection-start="809" selection-end="809" vertical-scroll-proportion="0.0" vertical-offset="169" max-vertical-offset="1105">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Objects/Environment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="76" selection-start="2683" selection-end="2683" vertical-scroll-proportion="0.0" vertical-offset="1054" max-vertical-offset="3400">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GUI/Open_window_vri_support.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="0" selection-start="577" selection-end="690" vertical-scroll-proportion="0.87188613" vertical-offset="71" max-vertical-offset="1156">
+        <state line="28" column="22" selection-start="574" selection-end="574" vertical-scroll-proportion="0.8469751" vertical-offset="0" max-vertical-offset="1275">
           <folding>
             <element signature="e#196#206#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/XML_support.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="33" selection-start="513" selection-end="513" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
+          <folding>
+            <element signature="e#196#206#0" expanded="true" />
+            <marker date="1560424531522" expanded="true" signature="428:514" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/Open_window_vri.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="120" column="74" selection-start="4872" selection-end="4872" vertical-scroll-proportion="0.0" vertical-offset="1801" max-vertical-offset="2771">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="209" selection-end="288" vertical-scroll-proportion="0.0" vertical-offset="63" max-vertical-offset="1088">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/pre_testing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="169" column="45" selection-start="7003" selection-end="7229" vertical-scroll-proportion="0.0" vertical-offset="2698" max-vertical-offset="3400">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/XML.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="108" column="60" selection-start="4029" selection-end="4029" vertical-scroll-proportion="0.15302491" vertical-offset="1750" max-vertical-offset="2431">
+          <folding>
+            <element signature="e#192#202#0" expanded="true" />
           </folding>
         </state>
       </provider>

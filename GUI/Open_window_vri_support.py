@@ -9,6 +9,7 @@ import sys
 from GUI import pre_testing
 from GUI import Designer
 from GUI import About_The_Program
+from GUI import XML
 
 try:
     import Tkinter as tk
@@ -21,6 +22,12 @@ try:
 except ImportError:
     import tkinter.ttk as ttk
     py3 = True
+
+def xml():
+    destroy_window()
+    print('open xml inst')
+    XML.vp_start_gui()
+
 
 def about():
     destroy_window()

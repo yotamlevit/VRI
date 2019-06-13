@@ -118,7 +118,7 @@ class Open_window:
         self.xml_b.configure(pady="0")
         self.xml_b.configure(text='''XML instructions,
 tutorial adn examples''')
-        self.xml_b.bind('<Button-1>',lambda e:Open_window_vri_support.xxx(e))
+        self.xml_b.bind('<Button-1>',lambda e:Open_window_vri_support.xml())
 
         self.designer_b = tk.Button(top)
         self.designer_b.place(relx=0.559, rely=0.637, height=64, width=267)

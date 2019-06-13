@@ -5,6 +5,12 @@ im_alpha = im.convert('RGBA')
 pixels = list(im.getdata())
 #pix_val = list(im.getdata())
 #print(pix_val_flat)
+import os
+
+osCommandString = "notepad.exe Data\environment.xml"
+os.system(osCommandString)
+
+
 temp_list = []
 fin = []
 count = 0
