@@ -30,7 +30,8 @@ def init(top, gui, logic_file , path_log , *args, **kwargs):
     spec = importlib.util.spec_from_file_location(logic_file, path_log)
     global logic
     logic = importlib.util.module_from_spec(spec)
-
+    spec.loader.exec_module(logic)
+    logic.init()
     w = gui
     top_level = top
     root = top

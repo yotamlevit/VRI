@@ -146,7 +146,7 @@ tutorial adn examples''')
         self.about_b.configure(highlightcolor="black")
         self.about_b.configure(pady="0")
         self.about_b.configure(text='''About the program''')
-        self.about_b.bind('<Button-1>',lambda e:Open_window_vri_support.xxx(e))
+        self.about_b.bind('<Button-1>',lambda e:Open_window_vri_support.about())
 
 if __name__ == '__main__':
     vp_start_gui()

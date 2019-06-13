@@ -119,8 +119,8 @@
         <Wall>
             <Parallelogram>
                 <StraightLine>
-                    <Point><x>450</x><y>350</y></Point>
-                    <Vector><length>360</length><angle>225</angle></Vector>
+                    <Point><x>440</x><y>340</y></Point>
+                    <Vector><length>280</length><angle>250</angle></Vector>
                 </StraightLine>
                 <angle>45</angle>
                 <length>10</length>
@@ -130,7 +130,7 @@
             <Parallelogram>
                 <StraightLine>
                     <Point><x>510</x><y>340</y></Point>
-                    <Vector><length>300</length><angle>225</angle></Vector>
+                    <Vector><length>280</length><angle>250</angle></Vector>
                 </StraightLine>
                 <angle>45</angle>
                 <length>10</length>
@@ -139,42 +139,13 @@
         <Wall>
             <Parallelogram>
                 <StraightLine>
-                    <Point><x>299</x><y>127</y></Point>
+                    <Point><x>449</x><y>127</y></Point>
                     <Vector><length>35</length><angle>280</angle></Vector>
                 </StraightLine>
                 <angle>45</angle>
                 <length>15</length>
             </Parallelogram>
         </Wall>
-        <Wall>
-            <Parallelogram>
-                <StraightLine>
-                    <Point><x>205</x><y>44</y></Point>
-                    <Vector><length>60</length><angle>90</angle></Vector>
-                </StraightLine>
-                <angle>45</angle>
-                <length>15</length>
-            </Parallelogram>
-        </Wall>
-        <Wall>
-            <Parallelogram>
-                <StraightLine>
-                    <Point><x>200</x><y>44</y></Point>
-                    <Vector><length>77</length><angle>320</angle></Vector>
-                </StraightLine>
-                <angle>45</angle>
-                <length>15</length>
-            </Parallelogram>
-        </Wall>
-        <Wall>
-            <Parallelogram>
-                <StraightLine>
-                    <Point><x>260</x><y>0</y></Point>
-                    <Vector><length>60</length><angle>20</angle></Vector>
-                </StraightLine>
-                <angle>45</angle>
-                <length>15</length>
-            </Parallelogram>
-        </Wall>
+
     </Objects>
 </Environment>

@@ -1,16 +1,17 @@
 # -*- coding: utf-8 -*-
 global right
 global left
-right = False
-left = False
+
+def init():
+    global right
+    global left
+    right = False
+    left = False
 
 def logic(lap, robot):
     global right
     global left
-    #print(right)
-    #print(left)
-    print(round(robot.ultrasonic[1].distance))
-    print(round(robot.ultrasonic[2].distance))
+    #pre programed
     """
     if lap < 450:
         return 'w'
@@ -32,41 +33,61 @@ def logic(lap, robot):
         return 'w'
     return None
     """
-    if lap < 20:
-        return 'w'
-    if round(robot.ultrasonic[4].distance) == round(robot.ultrasonic[6].distance) and (robot.ultrasonic[5].distance > 10 or robot.ultrasonic[5].distance < 0):
-        return 'w'
-    elif robot.ultrasonic[1].distance < 5:
-        return 'd'
-    elif round(robot.ultrasonic[2].distance) > round(robot.ultrasonic[1].distance) and abs(robot.ultrasonic[2].distance - robot.ultrasonic[1].distance) > 3:
-        return 'd'
-    else:
-        return 'w'
+    #trying to get left and fight equal
+    print(lap)
+    sen_12_sub = abs(robot.ultrasonic[1].distance) - abs(robot.ultrasonic[2].distance)
+    print(sen_12_sub)
+    if lap < 2050:
+        if right and left:
+            right = False
+            left = False
+            return 'w'
+        elif abs(robot.ultrasonic[1].distance) < 3:
+            right = True
+            return 'd'
+        elif abs(robot.ultrasonic[2].distance) < 3:
+            left = True
+            return 'a'
+        #elif robot.ultrasonic[1].distance < 0 and abs(robot.ultrasonic[5].distance) > 10:
+        #    return 'w'
+        elif sen_12_sub > 3:
+            left = True
+            return 'a'
+        elif sen_12_sub < -3:
+            print('1111111111')
+            right = True
+            return 'd'
+        elif abs(robot.ultrasonic[5].distance) > 10:
+            right = False
+            left = False
+            return 'w'
     """
-    if right or left:
+    #fail ai
+    sen_12_sub = abs(robot.ultrasonic[1].distance) - abs(robot.ultrasonic[2].distance)
+    print(sen_12_sub)
+    if right and left:
         right = False
         left = False
         return 'w'
-    elif round(robot.ultrasonic[4].distance) == round(robot.ultrasonic[6].distance) and (robot.ultrasonic[5].distance > 10 or robot.ultrasonic[5].distance < 0):
-            return 'w'
-    elif (round(robot.ultrasonic[4].distance) > round(robot.ultrasonic[6].distance) and round(robot.ultrasonic[1].distance) < round(robot.ultrasonic[3].distance))or(round(robot.ultrasonic[4].distance) < round(robot.ultrasonic[6].distance)and round(robot.ultrasonic[1].distance) > round(robot.ultrasonic[3].distance)) and (robot.ultrasonic[5].distance > 10 or robot.ultrasonic[5].distance < 0) :
-        return 'w'
-    elif robot.ultrasonic[1].distance > robot.ultrasonic[2].distance:
+    elif abs(robot.ultrasonic[1].distance) < 3:
         right = True
-        return 'a'
-    elif robot.ultrasonic[1].distance < robot.ultrasonic[2].distance:
-        left = True
         return 'd'
+    elif abs(robot.ultrasonic[2].distance) < 3:
+        left = True
+        return 'a'
+    #elif robot.ultrasonic[1].distance < 0 and abs(robot.ultrasonic[5].distance) > 10:
+    #    return 'w'
+    elif sen_12_sub > 3 and (abs(robot.ultrasonic[5].distance) < 70 or robot.ultrasonic[5].distance < 0):
+        left = True
+        return 'a'
+    elif sen_12_sub < -3 and (abs(robot.ultrasonic[5].distance) < 70 or robot.ultrasonic[5].distance < 0):
+        print('1111111111')
+        right = True
+        return 'd'
+    elif abs(robot.ultrasonic[5].distance) > 10:
+        right = False
+        left = False
+        return 'w'
+    return 'w'
     """
-    #if robot.ultrasonic[1].distance > 10 and robot.ultrasonic[2].distance > 10 and robot.ultrasonic[5].distance < 0:
-    #    print(1)
-    #return 's'
-    # if lap < 160:
-    #     return 's'
-    # elif 160 < lap <= 250:
-    #     return 'd'
-    #if 180 <= lap <2000:
-     #   return 'w'
-    #if 200 <= lap < 3000:
-     #   return 's'
     return None

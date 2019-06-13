@@ -61,6 +61,7 @@ class Robot(ObjectBuilder):
             txt += senc.convert_ultrasonic_to_txt()
         txt += '</Ultrasonic>'
         txt += '</Robot>'
+        return txt
 
     @staticmethod
     def robot_from_file(root):

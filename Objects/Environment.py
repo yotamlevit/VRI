@@ -83,6 +83,7 @@ class Environment:
         txt = '<Environment>'
         txt += '<height>' + str(self.boundaries.main_line.vector.length) + '</height><width>' +\
                str(self.boundaries.relative_line.vector.length) + '</width>'
+        print(self.robot.convert_robot_to_txt())
         txt += self.robot.convert_robot_to_txt()
         txt+='<Objects>'
         for obj in self.objects:
