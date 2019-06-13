@@ -6,7 +6,7 @@
 #    Jun 10, 2019 04:34:28 PM +0300  platform: Windows NT
 
 import sys
-
+from GUI import Open_window_vri
 try:
     import Tkinter as tk
 except ImportError:
@@ -22,6 +22,11 @@ except ImportError:
 def xxx(p1):
     print('Designer_support.xxx')
     sys.stdout.flush()
+
+def back():
+    destroy_window()
+    print('opening open window')
+    Open_window_vri.vp_start_gui()
 
 def init(top, gui, *args, **kwargs):
     global w, top_level, root

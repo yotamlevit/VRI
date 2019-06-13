@@ -11,8 +11,8 @@ def init():
 def logic(lap, robot):
     global right
     global left
-    #pre programed
     """
+    #pre programed
     if lap < 450:
         return 'w'
     if 450 < lap <= 540:
@@ -61,6 +61,7 @@ def logic(lap, robot):
             right = False
             left = False
             return 'w'
+
     """
     #fail ai
     sen_12_sub = abs(robot.ultrasonic[1].distance) - abs(robot.ultrasonic[2].distance)

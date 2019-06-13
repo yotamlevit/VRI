@@ -56,37 +56,37 @@ class Toplevel1:
 
         top.geometry("600x450+815+198")
         top.title("VRI - XML")
-        top.configure(background="#d9d9d9")
+        top.configure(background="#2b3f77")
 
         self.Label1 = tk.Label(top)
         self.Label1.place(relx=0.017, rely=0.067, height=41, width=184)
-        self.Label1.configure(background="#d9d9d9")
+        self.Label1.configure(background="#2b3f77")
         self.Label1.configure(disabledforeground="#a3a3a3")
         self.Label1.configure(font="-family {Segoe UI Historic} -size 14 -weight bold -underline 1")
-        self.Label1.configure(foreground="#000000")
         self.Label1.configure(text='''XML''')
+        self.Label1.configure(foreground="#ffffff")
         self.Label1.configure(width=184)
 
         self.Label2 = tk.Label(top)
         self.Label2.place(relx=0.033, rely=0.244, height=51, width=534)
-        self.Label2.configure(background="#d9d9d9")
+        self.Label2.configure(background="#2b3f77")
         self.Label2.configure(disabledforeground="#a3a3a3")
-        self.Label2.configure(foreground="#000000")
+        self.Label2.configure(foreground="#ffffff")
         self.Label2.configure(text='''To pass values put the value between the opening and the close of the argumentfor example:''')
         self.Label2.configure(width=534)
 
         self.Label3 = tk.Label(top)
         self.Label3.place(relx=0.067, rely=0.222, height=21, width=192)
-        self.Label3.configure(background="#d9d9d9")
+        self.Label3.configure(background="#2b3f77")
         self.Label3.configure(disabledforeground="#a3a3a3")
-        self.Label3.configure(foreground="#000000")
+        self.Label3.configure(foreground="#ffffff")
         self.Label3.configure(text='''The xml foramt is tag based written''')
 
         self.Label4 = tk.Label(top)
         self.Label4.place(relx=0.333, rely=0.356, height=21, width=175)
-        self.Label4.configure(background="#d9d9d9")
+        self.Label4.configure(background="#2b3f77")
         self.Label4.configure(disabledforeground="#a3a3a3")
-        self.Label4.configure(foreground="#000000")
+        self.Label4.configure(foreground="#ffffff")
         self.Label4.configure(text='''<argument>value</argument>''')
 
         self.Back = tk.Button(top)
@@ -101,6 +101,7 @@ class Toplevel1:
         self.Back.configure(pady="0")
         self.Back.configure(text='''Back''')
         self.Back.configure(width=107)
+        self.Back.configure(background="#8bd8bd")
         self.Back.bind('<Button-1>',lambda e:XML_support.back())
 
         self.open_file = tk.Button(top)
@@ -115,6 +116,7 @@ class Toplevel1:
         self.open_file.configure(pady="0")
         self.open_file.configure(text='''Open environment example and base file''')
         self.open_file.configure(width=247)
+        self.open_file.configure(background="#8bd8bd")
         self.open_file.bind('<Button-1>',lambda e:self.open_file_pressed())
 
     def open_file_pressed(self):

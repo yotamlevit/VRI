@@ -98,7 +98,7 @@ class designer:
         self.exit_b.configure(highlightcolor="black")
         self.exit_b.configure(pady="0")
         self.exit_b.configure(text='''Exit''')
-        self.exit_b.bind('<Button-1>',lambda e:Designer_support.xxx(e))
+        self.exit_b.bind('<Button-1>',lambda e:Designer_support.back())
 
         self.wall_b = tk.Button(top)
         self.wall_b.place(relx=0.833, rely=0.05, height=54, width=197)
