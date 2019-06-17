@@ -5,6 +5,11 @@
 #  in conjunction with Tcl version 8.6
 #    May 15, 2019 10:01:52 PM +0300  platform: Windows NT
 
+"""
+Author: Yotam Levit
+Project - VRI
+"""
+
 import sys
 from GUI import pre_testing
 from GUI import Designer
@@ -24,29 +29,39 @@ except ImportError:
     py3 = True
 
 def xml():
+    """
+    open the xml screen
+    """
     destroy_window()
     print('open xml inst')
     XML.vp_start_gui()
 
 
 def about():
+    """
+    open the about screen
+    """
     destroy_window()
     print('opening About screen')
     About_The_Program.vp_start_gui()
 
-def start_test(root):
+def start_test():
+    """
+    open get data screen
+    """
     destroy_window()
     print('Opening Get Data Screen')
     pre_testing.vp_start_gui()
 
-def designer(root):
+def designer():
+    """
+    open the designer
+    """
     destroy_window()
     print('Opening Designer Window')
     Designer.vp_start_gui()
 
-def xxx(root):
-    print('Open_window_vri_support.xxx')
-    sys.stdout.flush()
+
 
 def init(top, gui, *args, **kwargs):
     global w, top_level, root

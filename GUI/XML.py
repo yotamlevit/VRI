@@ -5,6 +5,11 @@
 #  in conjunction with Tcl version 8.6
 #    Jun 13, 2019 02:13:55 PM +0300  platform: Windows NT
 
+"""
+Author: Yotam Levit
+Project - VRI
+"""
+
 import sys
 import os
 try:

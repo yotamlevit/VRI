@@ -5,6 +5,11 @@
 #  in conjunction with Tcl version 8.6
 #    May 17, 2019 02:52:22 PM +0300  platform: Windows NT
 
+"""
+Author: Yotam Levit
+Project - VRI
+"""
+
 from GUI import Open_window_vri
 import importlib.util
 import sys

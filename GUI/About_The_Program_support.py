@@ -5,6 +5,11 @@
 #  in conjunction with Tcl version 8.6
 #    Jun 12, 2019 05:50:52 PM +0300  platform: Windows NT
 
+"""
+Author: Yotam Levit
+Project - VRI
+"""
+
 import sys
 from GUI import Open_window_vri
 try:
@@ -20,11 +25,18 @@ except ImportError:
     py3 = True
 
 def back():
+    """
+    When back button is pressed destroy
+     the window and open the open screen
+    """
     destroy_window()
     print('opening open window')
     Open_window_vri.vp_start_gui()
 
 def init(top, gui, *args, **kwargs):
+    """
+    init for the support file
+    """
     global w, top_level, root
     w = gui
     top_level = top

@@ -5,6 +5,11 @@
 #  in conjunction with Tcl version 8.6
 #    May 15, 2019 10:01:47 PM +0300  platform: Windows NT
 
+"""
+Author: Yotam Levit
+Project - VRI
+"""
+
 import sys
 
 try:
@@ -103,7 +108,7 @@ class Open_window:
         self.test_b.configure(highlightcolor="black")
         self.test_b.configure(pady="0")
         self.test_b.configure(text='''Start testing''')
-        self.test_b.bind('<Button-1>',lambda e:Open_window_vri_support.start_test(top))
+        self.test_b.bind('<Button-1>',lambda e:Open_window_vri_support.start_test())
 
         self.xml_b = tk.Button(top)
         self.xml_b.place(relx=0.154, rely=0.792, height=64, width=267)
@@ -132,7 +137,7 @@ tutorial adn examples''')
         self.designer_b.configure(highlightcolor="black")
         self.designer_b.configure(pady="0")
         self.designer_b.configure(text='''Designer''')
-        self.designer_b.bind('<Button-1>',lambda e:Open_window_vri_support.designer(top))
+        self.designer_b.bind('<Button-1>',lambda e:Open_window_vri_support.designer())
 
         self.about_b = tk.Button(top)
         self.about_b.place(relx=0.559, rely=0.792, height=64, width=264)

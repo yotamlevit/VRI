@@ -5,7 +5,10 @@
 #  in conjunction with Tcl version 8.6
 #    Jun 12, 2019 05:50:49 PM +0300  platform: Windows NT
 
-import sys
+"""
+Author: Yotam Levit
+Project - VRI
+"""
 
 try:
     import Tkinter as tk
@@ -21,6 +24,7 @@ except ImportError:
 
 from GUI import About_The_Program_support
 
+
 def vp_start_gui():
     '''Starting point when module is the main routine.'''
     global val, w, root
@@ -30,6 +34,8 @@ def vp_start_gui():
     root.mainloop()
 
 w = None
+
+
 def create_about_the_program(root, *args, **kwargs):
     '''Starting point when module is imported by another program.'''
     global w, w_win, rt
@@ -40,6 +46,7 @@ def create_about_the_program(root, *args, **kwargs):
     return (w, top)
 
 def destroy_about_the_program():
+    '''Destroy the screen'''
     global w
     w.destroy()
     w = None
@@ -62,7 +69,8 @@ class about_the_program:
         self.Label1.place(relx=0.067, rely=0.091, height=31, width=254)
         self.Label1.configure(background="#2b3f77")
         self.Label1.configure(disabledforeground="#a3a3a3")
-        self.Label1.configure(font="-family {Segoe UI Light} -size 15 -weight bold -underline 1")
+        self.Label1.configure(font="-family {Segoe UI Light} -size"
+                                   " 15 -weight bold -underline 1")
         self.Label1.configure(foreground="#ffffff")
         self.Label1.configure(text='''About the program:''')
         self.Label1.configure(width=254)

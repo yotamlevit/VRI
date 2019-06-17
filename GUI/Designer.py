@@ -5,6 +5,11 @@
 #  in conjunction with Tcl version 8.6
 #    Jun 17, 2019 03:42:18 PM +0300  platform: Windows NT
 
+"""
+Author: Yotam Levit
+Project - VRI
+"""
+
 import sys
 import os
 from Objects.Environment import Environment
@@ -22,6 +27,7 @@ except ImportError:
 
 from GUI import Designer_support
 
+
 def vp_start_gui():
     '''Starting point when module is the main routine.'''
     global val, w, root
@@ -31,6 +37,8 @@ def vp_start_gui():
     root.mainloop()
 
 w = None
+
+
 def create_Designer(root, *args, **kwargs):
     '''Starting point when module is imported by another program.'''
     global w, w_win, rt
@@ -40,10 +48,12 @@ def create_Designer(root, *args, **kwargs):
     Designer_support.init(w, top, *args, **kwargs)
     return (w, top)
 
+
 def destroy_Designer():
     global w
     w.destroy()
     w = None
+
 
 class Designer:
     def __init__(self, top=None):
@@ -121,6 +131,9 @@ class Designer:
         self.ve.bind('<Button-1>',lambda e:self.view_env(self.file_name.get()))
 
     def view_env(self, env_file):
+        """
+        this function draws an environment from a givin file name
+        """
         temp_path = sys.argv[0].split('/')
         temp_path.pop()
         temp_path.pop()
@@ -134,6 +147,7 @@ class Designer:
             env.draw(self.env_canvas)
         else:
             self.Label1.configure(text="can't find file")
+
 if __name__ == '__main__':
     vp_start_gui()
 

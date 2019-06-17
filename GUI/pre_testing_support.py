@@ -5,6 +5,11 @@
 #  in conjunction with Tcl version 8.6
 #    May 16, 2019 06:36:12 PM +0300  platform: Windows NT
 
+"""
+Author: Yotam Levit
+Project - VRI
+"""
+
 import sys
 from Objects.Environment import Environment
 from GUI import Simulator, Open_window_vri

@@ -5,6 +5,11 @@
 #  in conjunction with Tcl version 8.6
 #    May 17, 2019 02:55:11 PM +0300  platform: Windows NT
 
+"""
+Author: Yotam Levit
+Project - VRI
+"""
+
 import sys
 from Objects import Environment
 import os

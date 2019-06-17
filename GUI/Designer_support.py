@@ -5,6 +5,11 @@
 #  in conjunction with Tcl version 8.6
 #    Jun 17, 2019 03:42:26 PM +0300  platform: Windows NT
 
+"""
+Author: Yotam Levit
+Project - VRI
+"""
+
 from GUI import Open_window_vri
 import sys
 
@@ -20,21 +25,22 @@ except ImportError:
     import tkinter.ttk as ttk
     py3 = True
 
-def xxx(p1):
-    print('Designer_support.xxx')
-    print('p1 = {0}'.format(p1))
-    sys.stdout.flush()
 
 def back():
+    """
+    opening the open screen
+    """
     destroy_window()
     print('opening open screen')
     Open_window_vri.vp_start_gui()
+
 
 def init(top, gui, *args, **kwargs):
     global w, top_level, root
     w = gui
     top_level = top
     root = top
+
 
 def destroy_window():
     # Function which closes the window.
