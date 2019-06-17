@@ -34,8 +34,8 @@ class Environment:
     def check_obj_robot_crash(self):
         #print("2")
         for obj in self.objects:
-            #if self.robot.hit_box.is_Colliding(self.objects[obj].hit_box):
-            #    print("1")
+            if self.robot.hit_box.is_Colliding(self.objects[obj].hit_box):
+                print("1")
             #print(self.objects[obj].shape.get_equation())
             #print(self.robot.shape.get_point_value())
             if self.robot.shape.is_Colliding(self.objects[obj].shape):
@@ -93,6 +93,14 @@ class Environment:
         txt += '</Environment>'
         with open(Environment.data_path(file_name), 'w') as file_handle:
             file_handle.write(txt)
+
+    def draw(self, canvas_sim):
+        for key, value in self.objects.items():
+            value.draw(canvas_sim, 'green')
+        self.robot.draw(canvas_sim, 'black')
+        for senc in self.robot.ultrasonic:
+            if senc is not None:
+                senc.draw(canvas_sim)
 
     def __str__(self):
         return "The Environment is: \nRobot is: {}\n" \

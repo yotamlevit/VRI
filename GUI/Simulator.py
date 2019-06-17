@@ -227,13 +227,7 @@ class Simulator:
         self.TSeparator4.place(relx=0.821, rely=0.36, relwidth=0.171)
 
         self.bool_after = True
-        for key, value in self.env.objects.items():
-            value.draw(self.canvas_sim, 'green')
-        self.env.robot.draw(self.canvas_sim, 'black')
-        for senc in self.env.robot.ultrasonic:
-            if senc is not None:
-                senc.draw(self.canvas_sim)
-
+        self.env.draw(self.canvas_sim)
 
     def start(self):
         self.crach_lable.configure(text='Start')
