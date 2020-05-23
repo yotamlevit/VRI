@@ -24,6 +24,7 @@ except ImportError:
     import tkinter.ttk as ttk
     py3 = True
 
+sys.path.append("..")
 from GUI import Open_window_vri_support
 
 def vp_start_gui():
