@@ -1,50 +1,48 @@
 # -*- coding: utf-8 -*-
 import math
 from Error import Error
+from analytic_geometry.utils import quadratic_equation
 
 
 def point_from_file(root):
     x = (False, None)
     y = (False, None)
+
     for child in root:
         tag = child.tag.lower()
+
         if tag == 'x':
             try:
                 x = (True, float(child.text))
+
             except ValueError:
                 print(Error.error.get('p_1x'))
+
                 return False, [Error.error.get('p_1x')]
+
         elif tag == 'y':
             try:
                 y = (True, float(child.text))
+
             except ValueError:
                 print(Error.error.get('p_1y'))
+
                 return False, [Error.error.get('p_1y')]
+
     if x[0] and y[0]:
+
         return True, Point(x[1], y[1])
+
     elif not x[0] and not y[0]:
+
         return False, [Error.error.get('p_0x'), Error.error.get('p_0y')]
+
     elif not x[0]:
+
         return False, [Error.error.get('p_0x')]
+
     else:
         return False, [Error.error.get('p_0y')]
-
-
-def slope(dx, dy):
-    """
-    calculates the slope between two points with their dx and dy
-     dx: the difference between the x values of the points
-     dy: he difference between the y values of the points
-    """
-    return (float(dy) / float(dx)) if dx else None
-
-
-def quadratic_equation(a, b, c):
-    """
-
-    """
-    d = (b**2) - (4*a*c)
-    return (-b - d ** 0.5) / (a * 2), (-b + d ** 0.5) / (a * 2) if d >= 0 else (None, None)
 
 
 class Point:
@@ -80,22 +78,32 @@ class Point:
     def reflect_x_y(self):
         return Point(-self.x, -self.y)
 
+    @staticmethod
+    def __slope(dx, dy):
+        """
+        calculates the slope between two points with their dx and dy
+
+         dx: the difference between the x values of the points
+         dy: he difference between the y values of the points
+        """
+        return (float(dy) / float(dx)) if dx else None
+
     def slope_from_origin(self):
-        return slope(self.x, self.y)
+        return self.__slope(self.x, self.y)
 
     def slope(self, target):
-        return slope(target.x - self.x, target.y - self.y)
+        return self.__slope(target.x - self.x, target.y - self.y)
 
     def slope_deg(self, target):
         tag = self.slope(target)
+
         if tag is None:
             if target.y < self.y:
                 return 90
             else:
                 return 270
         deg = math.degrees(math.atan(tag))
-        #print('t    ' + str(tag))
-        #print('d    ' + str(deg))
+
         return deg
 
     def y_int(self, target):       # <= here's the magic
@@ -105,19 +113,24 @@ class Point:
         slope = self.slope(target)
         y_int = self.y_int(target)
         if slope is None and y_int is None:
+
             return 'x = {}'.format(self.x)
+
         elif y_int < 0:
             y_int = -y_int
             sign = '-'
         else:
             sign = '+'
+
         return 'y = {}x {} {}'.format(slope, sign, y_int)
 
     def line_function(self, target):
         slope = self.slope(target)
         y_int = self.y_int(target)
+
         def fn(x):
             return slope*float(x) + y_int
+
         return fn
 
     def convert_point_to_txt(self):
