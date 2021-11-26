@@ -64,7 +64,13 @@ class Point:
         midy = (self.y + target.y) / 2
         return Point(midx, midy)
 
-    def distance(self, target):
+    def distance(self, target: object):
+        """
+        This function calculates the distance between 2 points
+
+        @param target: Point - The target point to calculate the distance to
+        @return: Float - The distance between the points
+        """
         dx = target.x - self.x
         dy = target.y - self.y
         return (dx * dx + dy * dy) ** 0.5
@@ -79,7 +85,7 @@ class Point:
         return Point(-self.x, -self.y)
 
     @staticmethod
-    def __slope(dx, dy):
+    def __slope(dx: float, dy: float):
         """
         calculates the slope between two points with their dx and dy
 
@@ -89,12 +95,27 @@ class Point:
         return (float(dy) / float(dx)) if dx else None
 
     def slope_from_origin(self):
+        """
+        This function calculates the slope of the current point with the origin point 0,0
+        @return: Float - The slope
+        """
         return self.__slope(self.x, self.y)
 
-    def slope(self, target):
+    def slope(self, target: object):
+        """
+        This function calculates the slope between two points
+        @param target: Point - The second point to calculate with
+        @return: Float - the slope
+        """
         return self.__slope(target.x - self.x, target.y - self.y)
 
-    def slope_deg(self, target):
+    def slope_deg(self, target: object):
+        """
+        This function calculates the slopes degree
+
+        @param target: Point - The second point to calculate the degree of the slope with
+        @return: Float - The degree of the slope
+        """
         tag = self.slope(target)
 
         if tag is None:
@@ -106,7 +127,12 @@ class Point:
 
         return deg
 
-    def y_int(self, target):       # <= here's the magic
+    def y_int(self, target: object):       # <= here's the magic
+        """
+        THis function
+        @param target:
+        @return:
+        """
         return self.y - self.slope(target)*self.x if self.slope(target) is not None else None
 
     def line_equation(self, target):
