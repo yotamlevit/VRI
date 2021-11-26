@@ -117,12 +117,7 @@ class Point:
         slope = self.slope(target)
         y_int = self.y_int(target)
         def fn(x):
-            #try:
             return slope*float(x) + y_int
-            #except:
-             #   print('slop is None')
-            #finally:
-             #   return None
         return fn
 
     def convert_point_to_txt(self):
