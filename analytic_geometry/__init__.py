@@ -1,3 +1,4 @@
 # -*- coding: utf-8 -*-
 
-__all__ = ['Point', 'Vector', 'StraightLine']
+from .utils import *
+__all__ = ['Point', 'Vector', 'StraightLine', "quadratic_equation"]
