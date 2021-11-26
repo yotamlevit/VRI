@@ -2,11 +2,11 @@
 import math
 from Error import Error
 
+
 def point_from_file(root):
     x = (False, None)
     y = (False, None)
     for child in root:
-        #print(child.tag)
         tag = child.tag.lower()
         if tag == 'x':
             try:
@@ -38,6 +38,7 @@ def slope(dx, dy):
     """
     return (float(dy) / float(dx)) if dx else None
 
+
 def quadratic_equation(a, b, c):
     """
 
@@ -60,7 +61,6 @@ class Point:
     def get_point(self):
         return self.x, self.y
 
-
     def halfway(self, target):
         midx = (self.x + target.x) / 2
         midy = (self.y + target.y) / 2
@@ -70,7 +70,6 @@ class Point:
         dx = target.x - self.x
         dy = target.y - self.y
         return (dx * dx + dy * dy) ** 0.5
-
 
     def reflect_x(self):
         return Point(-self.x,self.y)
@@ -114,7 +113,6 @@ class Point:
             sign = '+'
         return 'y = {}x {} {}'.format(slope, sign, y_int)
 
-
     def line_function(self, target):
         slope = self.slope(target)
         y_int = self.y_int(target)
@@ -129,6 +127,8 @@ class Point:
 
     def convert_point_to_txt(self):
         return '<Point><x>' + str(self.x) + '</x><y>' + str(self.y) + '</y></Point>'
+
+
 def main():
     """
     Add Documentation here

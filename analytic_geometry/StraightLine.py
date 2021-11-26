@@ -32,6 +32,7 @@ def line_from_file(root):
     else:
         return False, [Error.error.get('s_0v')]
 
+
 # todo update func
 class StraightLine:
 
@@ -182,6 +183,8 @@ class StraightLine:
 
     def convert_line_to_txt(self):
         return '<StraightLine>' + self.start_point.convert_point_to_txt() + self.vector.convert_vector_to_txt() + '</StraightLine>'
+
+
 def main():
     """
     Add Documentation here

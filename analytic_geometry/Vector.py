@@ -97,9 +97,9 @@ class Vector:
         dirc = (dirc[0]/self.length, dirc[1]/self.length)
         return dirc[0]*uni, dirc[1]*uni
 
-
     def convert_vector_to_txt(self):
         return '<Vector><length>' + str(self.length) + '</length><angle>' + str(self.angle) + '</angle></Vector>'
+
 
 def main():
     """
